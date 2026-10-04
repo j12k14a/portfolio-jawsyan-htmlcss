@@ -12,11 +12,9 @@
 
     <!-- 2. CSS INTERNAL (Styling khusus halaman Contact & Formulir Pesan) -->
     <style>
-        /* Styling Khusus Formulir Kontak */
+        /* Styling Halaman Kontak */
         .contact-layout {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 2rem;
+            max-width: 850px;
             margin: 2rem 0;
         }
 
@@ -170,16 +168,14 @@
                 <span class="section-tag">HUBUNGI SAYA</span>
                 <h2 class="section-title">Inisialisasi Komunikasi & Kolaborasi</h2>
                 <p class="section-desc">
-                    Silakan gunakan formulir interaktif di bawah ini untuk mengirimkan pesan, undangan riset keamanan siber, diskusi proyek AI, atau koordinasi akademik.
+                    Silakan gunakan kontak di bawah ini untuk berdiskusi mengenai riset keamanan siber, proyek AI, atau koordinasi akademik.
                 </p>
             </section>
 
-            <div class="contact-layout">
-                
-                <!-- Info Kontak Kiri -->
-                <aside class="contact-info-card card-accent">
-                    <div>
-                        <h3 style="color: #ffffff; margin-bottom: 0.5rem;">Informasi Kontak Langsung</h3>
+            <!-- Informasi Kontak Langsung & Jadwal -->
+            <section class="card card-accent contact-layout" style="padding: 2.25rem;">
+                <div>
+                    <h3 style="color: #ffffff; margin-bottom: 0.5rem;">Informasi Kontak Langsung</h3>
                         <p style="font-size: 0.9rem;">
                             Terbuka untuk diskusi mengenai keamanan siber etis, audit kerentanan, dan kolaborasi tim:
                         </p>
@@ -250,67 +246,7 @@
                             </tbody>
                         </table>
                     </div>
-                </aside>
-
-                <!-- Bagian Kanan: Saluran Komunikasi Langsung & Panduan Koordinasi -->
-                <section class="card" style="padding: 2.25rem;">
-                    <header class="section-header" style="margin-bottom: 1.5rem;">
-                        <span class="section-tag">KOMUNIKASI LANGSUNG</span>
-                        <h3 style="color: #ffffff; margin-bottom: 0.5rem;">Akses Kontak Cepat & Terverifikasi</h3>
-                        <p style="font-size: 0.9rem; margin-bottom: 0;">
-                            Untuk efisiensi dan keamanan, silakan hubungi langsung melalui saluran resmi berikut:
-                        </p>
-                    </header>
-
-                    <div style="display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 2rem;">
-                        <!-- WhatsApp Action -->
-                        <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 10px; padding: 1.25rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-                            <div>
-                                <strong style="color: #10b981; font-size: 1rem; display: block; margin-bottom: 0.25rem;">📱 WhatsApp Langsung</strong>
-                                <span style="font-size: 0.85rem; color: var(--text-secondary);">Respons instan untuk diskusi mendesak & koordinasi siber</span>
-                            </div>
-                            <a href="https://wa.me/628111541514" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background: #10b981; border-color: #10b981; color: #fff; padding: 0.6rem 1.25rem; font-size: 0.85rem;">
-                                Chat WhatsApp 💬
-                            </a>
-                        </div>
-
-                        <!-- Email Action -->
-                        <div style="background: rgba(0, 242, 254, 0.08); border: 1px solid rgba(0, 242, 254, 0.3); border-radius: 10px; padding: 1.25rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-                            <div>
-                                <strong style="color: var(--primary); font-size: 1rem; display: block; margin-bottom: 0.25rem;">✉️ Email Kampus Resmi</strong>
-                                <span style="font-size: 0.85rem; color: var(--text-secondary);">muhammad.jawsyan@paramadina.ac.id</span>
-                            </div>
-                            <a href="mailto:muhammad.jawsyan@paramadina.ac.id?subject=Inquiry%20Portofolio%20Muhammad%20Jawsyan" class="btn btn-primary" style="padding: 0.6rem 1.25rem; font-size: 0.85rem;">
-                                Kirim Email ✉️
-                            </a>
-                        </div>
-
-                        <!-- LinkedIn Action -->
-                        <div style="background: rgba(59, 130, 246, 0.08); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 10px; padding: 1.25rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-                            <div>
-                                <strong style="color: #60a5fa; font-size: 1rem; display: block; margin-bottom: 0.25rem;">💼 Jejaring Profesional LinkedIn</strong>
-                                <span style="font-size: 0.85rem; color: var(--text-secondary);">Koneksi karir, rekomendasi, dan riwayat profesional</span>
-                            </div>
-                            <a href="https://www.linkedin.com/in/muhammadjawsyan/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="padding: 0.6rem 1.25rem; font-size: 0.85rem;">
-                                Kunjungi Profil ↗
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Panduan Pelaporan & Etika Koordinasi -->
-                    <article style="background: #111827; border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem;">
-                        <h4 style="color: var(--accent-gold); font-size: 0.95rem; margin-bottom: 0.5rem;">
-                            🛡️ Kode Etik & Prosedur Koordinasi Kerentanan
-                        </h4>
-                        <ul class="list-styled" style="font-size: 0.85rem; margin-bottom: 0;">
-                            <li>Seluruh komunikasi terkait temuan kerentanan siber wajib mematuhi kerangka kerja <em>Responsible Vulnerability Disclosure</em>.</li>
-                            <li>Laporan teknis resmi dapat langsung dialamatkan melalui koordinasi bersama CSIRT terkait (seperti Kartika CSIRT PUSSIBER TNI AD atau BSSA Pemprov DKI Jakarta).</li>
-                            <li>Tidak melayani permintaan terkait eksploitasi ilegal, peretasan tidak berizin, maupun aktivitas siber destruktif lainnya.</li>
-                        </ul>
-                    </article>
-                </section>
-
-            </div>
+            </section>
 
             <!-- Footer -->
             <footer class="site-footer">
