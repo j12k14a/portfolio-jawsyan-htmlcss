@@ -25,9 +25,9 @@ Desain tata letak terinspirasi dari konsep **iPortfolio** dengan navigasi sideba
 | 3 | **Elemen `image`** | Foto profil personal, dokumentasi foto acara Capture The Flag (CTF), serta galeri gambar piagam/sertifikat beresolusi tinggi. | `<img src="assets/img/profile.jpg">`, `cert_pussiber_tni_ad.png`, `cert_bssa_dki_jakarta.png`, dll. |
 | 4 | **Elemen `link`** | Tautan internal antar menu halaman, link dokumen PDF sertifikat, link profil LinkedIn, GitHub, dan blog edukasi. | `<a href="...">`, `<a href="mailto:...">`, `<a href="tel:...">`, link download PDF |
 | 5 | **Elemen `list`** | Daftar keahlian (`<ul>`), prosedur standar pelaporan kerentanan (`<ol>`), dan glosarium istilah siber (`<dl>`, `<dt>`, `<dd>`). | Terdapat di `skills.html` dan `index.html` |
-| 6 | **Elemen `form`** | Formulir interaktif pengiriman pesan dan permohonan koordinasi riset keamanan siber. | `<form action="#" method="POST">` di `contact.html` |
-| 7 | **Elemen `input`** | Berbagai jenis input: `type="text"`, `type="email"`, `type="tel"`, `type="radio"`, `type="checkbox"`, `type="date"`, serta `<textarea>` dan `<select>`. | Terdapat di dalam form pada `contact.html` |
-| 8 | **Elemen `button`** | Tombol submit `<button type="submit">` dan reset `<button type="reset">` untuk formulir pesan. | Terdapat di form `contact.html` |
+| 6 | **Elemen `form`** | Formulir filter & pencarian arsip sertifikat terstruktur. | `<form action="#" method="GET">` di `achievements.html` |
+| 7 | **Elemen `input`** | Input pencarian kata kunci (`type="search"`) serta dropdown kategori (`<select>`). | Terdapat di dalam form pada `achievements.html` |
+| 8 | **Elemen `button`** | Tombol aksi `<button type="submit">` (Cari Arsip) dan `<button type="reset">` (Reset Filter). | Terdapat di form `achievements.html` |
 | 9 | **CSS Eksternal** | File stylesheet global `assets/css/style.css` yang mengatur variabel warna, grid/flexbox, typography, dan responsivitas. | `<link rel="stylesheet" href="assets/css/style.css">` |
 | 10 | **CSS Internal** | Tag `<style>` di dalam `<head>` pada setiap file HTML yang menangani styling khusus per halaman. | `<style>...</style>` di `<head>` pada `index.html`, `skills.html`, `achievements.html`, `contact.html` |
 | 11 | **CSS Inline** | Atribut `style="..."` pada elemen tertentu seperti penentuan width progress bar dinamis, badge terverifikasi, dan aksen warna khusus. | Contoh: `style="width: 92%;"`, `style="color: var(--accent-gold);"`, dsb. |

@@ -173,6 +173,36 @@
             </section>
 
             <!-- ========================================================
+                 ELEMEN FORM, INPUT, BUTTON (Pencarian & Filter Arsip)
+                 Memenuhi kriteria penugasan: form, input, button
+                 ======================================================== -->
+            <section class="card" style="padding: 1.5rem; margin-bottom: 2rem;">
+                <h3 class="card-title" style="margin-bottom: 0.75rem;">🔍 Cari & Filter Dokumen Sertifikat</h3>
+                <form action="#" method="GET" style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+                    <div style="flex: 1; min-width: 250px;">
+                        <input type="search" name="keyword" class="form-input" placeholder="Ketik kata kunci (misal: TNI AD, BSSA, CTF, Cisco)...">
+                    </div>
+                    <div style="min-width: 180px;">
+                        <select name="kategori" class="form-select">
+                            <option value="">Semua Kategori</option>
+                            <option value="khusus">Predikat Khusus (TNI AD & BSSA)</option>
+                            <option value="ctf">Kompetisi CTF (Zero Day)</option>
+                            <option value="sevima">SEVIMA Challenge (10 JP, AI, CTI)</option>
+                            <option value="global">Sertifikasi Global (Cisco, MS, CRPO)</option>
+                        </select>
+                    </div>
+                    <div class="btn-group" style="margin-top: 0;">
+                        <button type="submit" class="btn btn-primary" style="padding: 0.75rem 1.25rem; font-size: 0.85rem;">
+                            Cari Arsip 🔎
+                        </button>
+                        <button type="reset" class="btn btn-secondary" style="padding: 0.75rem 1rem; font-size: 0.85rem;">
+                            ↺ Reset
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- ========================================================
                  ELEMEN TABEL UTAMA (Wajib: Memenuhi Persyaratan Tugas)
                  ======================================================== -->
             <section class="achievements-table-container">
