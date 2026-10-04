@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Keahlian Teknis & Riwayat Pengalaman Muhammad Jawsyan - Cybersecurity, AI & Web Development.">
+    <meta name="author" content="Muhammad Jawsyan">
+    <title>Muhammad Jawsyan | Skills & Experience</title>
+    
+    <!-- 1. CSS EKSTERNAL -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- 2. CSS INTERNAL (Styling khusus halaman Skills & Experience) -->
+    <style>
+        /* Internal CSS: Custom Skill Meters & Timeline Highlights */
+        .skills-matrix {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+
+        .skill-group {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .skill-group-title {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        /* Definition List Styling Khusus */
+        .glossary-box {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.7) 0%, rgba(30, 41, 59, 0.4) 100%);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin: 1.5rem 0;
+        }
+
+        .glossary-dl {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 1rem 1.5rem;
+        }
+
+        .glossary-dt {
+            color: var(--primary);
+            font-weight: 700;
+            font-family: var(--font-mono);
+            font-size: 0.95rem;
+        }
+
+        .glossary-dd {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Matrix Table Styling */
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        .matrix-table th, .matrix-table td {
+            padding: 0.85rem 1rem;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+
+        .matrix-table th {
+            background-color: #1e293b;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .matrix-table tr:hover {
+            background-color: rgba(0, 242, 254, 0.05);
+        }
+
+        @media (max-width: 768px) {
+            .skills-matrix {
+                grid-template-columns: 1fr;
+            }
+            .glossary-dl {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-wrapper">
+        <!-- Sidebar Navigation -->
+        <header class="sidebar">
+            <div class="profile-card">
+                <div class="avatar-wrapper">
+                    <img src="assets/img/profile.jpg" alt="Foto Profil Muhammad Jawsyan" class="avatar-img">
+                    <span class="avatar-badge" title="Status: Aktif">✓</span>
+                </div>
+                <h1 class="profile-name">Muhammad Jawsyan</h1>
+                <p class="profile-tagline">Cyber Security & AI Enthusiast</p>
+                <p class="profile-sub">Mahasiswa Universitas Paramadina</p>
+            </div>
+
+            <!-- Menu Navigasi Antar Halaman -->
+            <nav>
+                <ul class="nav-menu">
+                    <li>
+                        <a href="index.html" class="nav-link">
+                            <span class="nav-icon">👤</span>
+                            <span>Home & About</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="skills.html" class="nav-link active">
+                            <span class="nav-icon">⚡</span>
+                            <span>Skills & Experience</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="achievements.html" class="nav-link">
+                            <span class="nav-icon">🏆</span>
+                            <span>Achievements & Table</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.html" class="nav-link">
+                            <span class="nav-icon">📬</span>
+                            <span>Contact Me</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/muhammadjawsyan/" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn">in</a>
+                    <a href="https://github.com/j12k14a" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub">git</a>
+                    <a href="https://scriptkiddieoflinux.blogspot.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="Blog Edukasi">🌐</a>
+                    <a href="mailto:muhammad.jawsyan@paramadina.ac.id" class="social-btn" title="Email">✉️</a>
+                </div>
+                <p class="academic-badge">
+                    Tugas Pemrograman Web (Kelas A)<br>
+                    <strong>Universitas Paramadina 2026/2027</strong>
+                </p>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            
+            <section class="section-header">
+                <span class="section-tag">ARSENAL TEKNOLOGI</span>
+                <h2 class="section-title">Keahlian & Pengalaman Teknis</h2>
+                <p class="section-desc">
+                    Kompetensi teruji dalam keamanan siber ofensif, pengujian penetrasi etis, kecerdasan buatan, dan pengembangan aplikasi web.
+                </p>
+            </section>
+
+            <!-- Skill Progress Meters (Dengan Inline CSS width untuk akurasi persentase) -->
+            <section class="card">
+                <h3 class="card-title">📊 Tingkat Penguasaan Kompetensi (Core Competencies)</h3>
+                
+                <div class="skill-bar-wrapper">
+                    <div class="skill-info">
+                        <span>Offensive Security & Ethical Vulnerability Reporting</span>
+                        <!-- 3. CSS INLINE: Penentuan style color aksen dan font weight -->
+                        <span style="color: var(--primary); font-weight: bold;">92%</span>
+                    </div>
+                    <div class="skill-track">
+                        <!-- 3. CSS INLINE: Menetapkan lebar bar secara dinamis -->
+                        <div class="skill-fill" style="width: 92%; background: linear-gradient(90deg, #00f2fe, #38bdf8);"></div>
+                    </div>
+                </div>
+
+                <div class="skill-bar-wrapper">
+                    <div class="skill-info">
+                        <span>Capture The Flag (CTF) Web Exploitation & Cryptography</span>
+                        <span style="color: var(--primary); font-weight: bold;">88%</span>
+                    </div>
+                    <div class="skill-track">
+                        <div class="skill-fill" style="width: 88%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-bar-wrapper">
+                    <div class="skill-info">
+                        <span>AI Agent Engineering (ADK & Python Automation)</span>
+                        <span style="color: var(--primary); font-weight: bold;">85%</span>
+                    </div>
+                    <div class="skill-track">
+                        <div class="skill-fill" style="width: 85%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-bar-wrapper">
+                    <div class="skill-info">
+                        <span>Ransomware Analysis & Defense (CRPO EU Cyber Academy)</span>
+                        <span style="color: var(--primary); font-weight: bold;">90%</span>
+                    </div>
+                    <div class="skill-track">
+                        <div class="skill-fill" style="width: 90%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-bar-wrapper">
+                    <div class="skill-info">
+                        <span>Frontend Web Development (HTML5, CSS3 Semantic & Responsive)</span>
+                        <span style="color: var(--primary); font-weight: bold;">86%</span>
+                    </div>
+                    <div class="skill-track">
+                        <div class="skill-fill" style="width: 86%;"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Matrix Cards (List Elemen ul & li) -->
+            <section class="skills-matrix">
+                <!-- Group 1: Cybersecurity -->
+                <article class="skill-group card-accent">
+                    <h3 class="skill-group-title">🛡️ Cyber Security & Red Team</h3>
+                    <ul class="list-styled">
+                        <li><strong>Ethical Vulnerability Disclosure</strong>: Terbukti berkontribusi resmi untuk PUSSIBER TNI AD & BSSA DKI Jakarta.</li>
+                        <li><strong>CTF Operations</strong>: Juara 4 Scholar Battle Winner (Zero Day 2026).</li>
+                        <li><strong>Penetration Testing</strong>: Analisis kerentanan web, OWASP Top 10, XSS, SQLi, CSRF, IDOR.</li>
+                        <li><strong>Threat Intelligence</strong>: CTI Core Intelligence & Ransomware Response Officer.</li>
+                        <li><strong>Security Standards</strong>: NIST CSF & ISO 27001 awareness.</li>
+                    </ul>
+                </article>
+
+                <!-- Group 2: AI & Programming -->
+                <article class="skill-group card-gold">
+                    <h3 class="skill-group-title" style="color: var(--accent-gold);">🤖 AI, Programming & Tools</h3>
+                    <ul class="list-styled">
+                        <li><strong>AI Agent Development</strong>: Mengembangkan AI Agent menggunakan ADK & Gemini API.</li>
+                        <li><strong>Python Programming</strong>: Automasi audit sistem, scripting exploit, visualisasi data.</li>
+                        <li><strong>Web Standards</strong>: HTML5 Semantic, CSS3 Modern Flexbox/Grid, Responsive Mobile-First.</li>
+                        <li><strong>Operating Systems</strong>: Kali Linux, Ubuntu WSL, Arch, Windows Security.</li>
+                        <li><strong>Tools Keamanan</strong>: Burp Suite, Nmap, Wireshark, Metasploit, Hydra, Git/GitHub.</li>
+                    </ul>
+                </article>
+            </section>
+
+            <!-- Ordered List (Elemen <ol>) : Standar Prosedur Bug Reporting -->
+            <section class="card">
+                <header class="section-header" style="margin-bottom: 1.5rem;">
+                    <span class="section-tag">STANDARD OPERATING PROCEDURE</span>
+                    <h3 style="margin-bottom: 0.25rem;">📋 Alur Prosedur Pelaporan Kerentanan Etis (Ethical Disclosure Flow)</h3>
+                    <p class="section-desc" style="font-size: 0.95rem;">
+                        Metodologi standar yang selalu saya terapkan dalam menjalankan riset keamanan siber secara bertanggung jawab:
+                    </p>
+                </header>
+
+                <ol class="list-ordered" style="line-height: 1.8;">
+                    <li><strong>Tahap 1 - Reconnaissance & Surface Mapping</strong>: Memetakan aset digital publik tanpa melakukan eksploitasi merusak.</li>
+                    <li><strong>Tahap 2 - Vulnerability Identification</strong>: Menemukan potensi kelemahan sistem berdasarkan katalog kerentanan CWE/CVE.</li>
+                    <li><strong>Tahap 3 - Proof of Concept (PoC) Validation</strong>: Menyusun replikasi bukti temuan yang aman tanpa mencuri atau merusak data pengguna.</li>
+                    <li><strong>Tahap 4 - Responsible Reporting</strong>: Mengirimkan laporan teknis komprehensif ke CSIRT instansi terkait (seperti Kartika CSIRT PUSSIBER TNI AD atau BSSA DKI Jakarta).</li>
+                    <li><strong>Tahap 5 - Remediation Assistance & Verification</strong>: Membantu tim pengembang memverifikasi penambalan (patching) celah keamanan hingga tuntas.</li>
+                </ol>
+            </section>
+
+            <!-- Definition List (Elemen <dl>, <dt>, <dd>) : Glosarium Istilah -->
+            <section class="glossary-box">
+                <h3 style="color: #fff; margin-bottom: 1rem;">📖 Glosarium Istilah Kunci Bidang Keamanan Siber</h3>
+                <dl class="glossary-dl">
+                    <dt class="glossary-dt">CSIRT</dt>
+                    <dd class="glossary-dd"><em>Computer Security Incident Response Team</em> — Tim organisasi yang bertanggung jawab mengoordinasikan respons dan penanganan insiden keamanan siber.</dd>
+
+                    <dt class="glossary-dt">Red Team</dt>
+                    <dd class="glossary-dd">Kelompok profesional keamanan siber yang berperan menyimulasikan taktik penyerang nyata untuk menguji ketahanan pertahanan sistem organisasi.</dd>
+
+                    <dt class="glossary-dt">Responsible Disclosure</dt>
+                    <dd class="glossary-dd">Praktik etis di mana peneliti keamanan melaporkan celah kerentanan secara privat kepada pemilik sistem sebelum mempublikasikannya ke umum.</dd>
+
+                    <dt class="glossary-dt">Capture The Flag (CTF)</dt>
+                    <dd class="glossary-dd">Kompetisi kompetitif di bidang keamanan komputer di mana peserta memecahkan tantangan kriptografi, web security, forensik, dan reverse engineering untuk menemukan "flag".</dd>
+                </dl>
+            </section>
+
+            <!-- Experience Timeline Section -->
+            <section class="card">
+                <header class="section-header">
+                    <span class="section-tag">LOG RIWAYAT</span>
+                    <h2 class="section-title">Experience Log (Kronologis)</h2>
+                    <p class="section-desc">
+                        Rekam jejak pengalaman riset, perlombaan, dan pelatihan yang disusun terurut dari yang terbaru:
+                    </p>
+                </header>
+
+                <div class="timeline">
+                    <!-- Sept 2026 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot" style="background-color: var(--accent-gold); box-shadow: 0 0 10px var(--accent-gold);"></div>
+                        <div class="timeline-date">September 2026</div>
+                        <h4 style="color: #fff;">Sertifikat Apresiasi: PUSSIBER TNI AD (Kartika CSIRT)</h4>
+                        <p>
+                            Diberikan langsung oleh Dansatlak Penangkalan Siber Pussiberad atas kerja sama koordinasi temuan kerentanan serta bertindak secara etis dengan melaporkannya (No: <code>SERT/36/PUSSIBERAD/KARTIKA-CSIRT/IX/2026</code>).
+                        </p>
+                    </div>
+
+                    <!-- Ags 2026 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot" style="background-color: var(--primary);"></div>
+                        <div class="timeline-date">Agustus 2026</div>
+                        <h4 style="color: #fff;">Sertifikat Apresiasi: BSSA Diskominfotik Pemprov DKI Jakarta</h4>
+                        <p>
+                            Apresiasi resmi dari Badan Siber Sandi dan Aplikasi Provinsi DKI Jakarta atas penemuan dan pelaporan Vulnerability terkait sistem elektronik Pemerintah Provinsi DKI Jakarta (No: <code>113/BUG/BSSA/VIII/2026</code>).
+                        </p>
+                    </div>
+
+                    <!-- Jun 2026 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Juni 2026</div>
+                        <h4 style="color: #fff;">Juara 4 Scholar Battle Winner - CTF Competition ZERO DAY</h4>
+                        <p>
+                            Memenangkan peringkat ke-4 dalam kompetisi nasional Capture The Flag (CTF) yang diselenggarakan oleh DSG & Filkom.
+                        </p>
+                    </div>
+
+                    <!-- Jun 2026 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Juni 2026</div>
+                        <h4 style="color: #fff;">SEVIMA Security Challenge 2026 Series</h4>
+                        <p>
+                            Menyelesaikan 3 rangkaian sertifikasi: MOOC Security Challenge 10 JP, AI Disruptions on Cyber Security, dan Cyber Threat Intelligence.
+                        </p>
+                    </div>
+
+                    <!-- Jun 2024 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Juni 2024</div>
+                        <h4 style="color: #fff;">Core Cybersecurity Foundations - Hackviser</h4>
+                        <p>
+                            Menuntaskan sertifikasi praktis fondasi keamanan siber dan analisis kerentanan sistem.
+                        </p>
+                    </div>
+
+                    <!-- Jan 2024 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Januari 2024</div>
+                        <h4 style="color: #fff;">Generative AI for Youth & Cisco Cybersecurity</h4>
+                        <p>
+                            Tersertifikasi oleh Microsoft (Generative AI Training) dan Cisco Networking Academy (Introduction to Cybersecurity).
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="site-footer">
+                <ul class="footer-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="achievements.html">Achievements</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <p>&copy; 2026 Muhammad Jawsyan. Dibuat dengan <strong>Pure HTML5 & CSS3</strong> tanpa framework untuk memenuhi Tugas Kuliah Pemrograman Web.</p>
+            </footer>
+
+        </main>
+    </div>
+
+</body>
+</html>

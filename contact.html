@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hubungi Muhammad Jawsyan - Kolaborasi Keamanan Siber, Penetrasi Etis, dan Diskusi AI.">
+    <meta name="author" content="Muhammad Jawsyan">
+    <title>Muhammad Jawsyan | Contact Me</title>
+    
+    <!-- 1. CSS EKSTERNAL -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- 2. CSS INTERNAL (Styling khusus halaman Contact & Formulir Pesan) -->
+    <style>
+        /* Styling Khusus Formulir Kontak */
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .contact-info-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .contact-item-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            margin: 1.5rem 0;
+        }
+
+        .contact-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-icon-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background-color: rgba(0, 242, 254, 0.1);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .contact-meta h4 {
+            font-size: 0.95rem;
+            color: #ffffff;
+            margin-bottom: 0.2rem;
+        }
+
+        .contact-meta p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+            color: var(--text-secondary);
+        }
+
+        /* Form Card */
+        .contact-form-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 2.25rem;
+            box-shadow: var(--shadow-card);
+        }
+
+        /* SLA Table */
+        .sla-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin-top: 1.5rem;
+        }
+
+        .sla-table th, .sla-table td {
+            padding: 0.65rem 0.85rem;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+
+        .sla-table th {
+            background-color: rgba(30, 41, 59, 0.6);
+            color: var(--primary);
+        }
+
+        @media (max-width: 992px) {
+            .contact-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-wrapper">
+        <!-- Sidebar Navigation -->
+        <header class="sidebar">
+            <div class="profile-card">
+                <div class="avatar-wrapper">
+                    <img src="assets/img/profile.jpg" alt="Foto Profil Muhammad Jawsyan" class="avatar-img">
+                    <span class="avatar-badge" title="Status: Aktif">✓</span>
+                </div>
+                <h1 class="profile-name">Muhammad Jawsyan</h1>
+                <p class="profile-tagline">Cyber Security & AI Enthusiast</p>
+                <p class="profile-sub">Mahasiswa Universitas Paramadina</p>
+            </div>
+
+            <!-- Menu Navigasi Antar Halaman -->
+            <nav>
+                <ul class="nav-menu">
+                    <li>
+                        <a href="index.html" class="nav-link">
+                            <span class="nav-icon">👤</span>
+                            <span>Home & About</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="skills.html" class="nav-link">
+                            <span class="nav-icon">⚡</span>
+                            <span>Skills & Experience</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="achievements.html" class="nav-link">
+                            <span class="nav-icon">🏆</span>
+                            <span>Achievements & Table</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.html" class="nav-link active">
+                            <span class="nav-icon">📬</span>
+                            <span>Contact Me</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/muhammadjawsyan/" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn">in</a>
+                    <a href="https://github.com/j12k14a" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub">git</a>
+                    <a href="https://scriptkiddieoflinux.blogspot.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="Blog Edukasi">🌐</a>
+                    <a href="mailto:muhammad.jawsyan@paramadina.ac.id" class="social-btn" title="Email">✉️</a>
+                </div>
+                <p class="academic-badge">
+                    Tugas Pemrograman Web (Kelas A)<br>
+                    <strong>Universitas Paramadina 2026/2027</strong>
+                </p>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            
+            <section class="section-header">
+                <span class="section-tag">HUBUNGI SAYA</span>
+                <h2 class="section-title">Inisialisasi Komunikasi & Kolaborasi</h2>
+                <p class="section-desc">
+                    Silakan gunakan formulir interaktif di bawah ini untuk mengirimkan pesan, undangan riset keamanan siber, diskusi proyek AI, atau koordinasi akademik.
+                </p>
+            </section>
+
+            <div class="contact-layout">
+                
+                <!-- Info Kontak Kiri -->
+                <aside class="contact-info-card card-accent">
+                    <div>
+                        <h3 style="color: #ffffff; margin-bottom: 0.5rem;">Informasi Kontak Langsung</h3>
+                        <p style="font-size: 0.9rem;">
+                            Terbuka untuk diskusi mengenai keamanan siber etis, audit kerentanan, dan kolaborasi tim:
+                        </p>
+
+                        <div class="contact-item-group">
+                            <!-- Email -->
+                            <div class="contact-row">
+                                <div class="contact-icon-box">✉️</div>
+                                <div class="contact-meta">
+                                    <h4>Alamat Email Resmi</h4>
+                                    <p><a href="mailto:muhammad.jawsyan@paramadina.ac.id">muhammad.jawsyan@paramadina.ac.id</a></p>
+                                </div>
+                            </div>
+
+                            <!-- Phone / WA -->
+                            <div class="contact-row">
+                                <div class="contact-icon-box">📱</div>
+                                <div class="contact-meta">
+                                    <h4>Telepon / WhatsApp</h4>
+                                    <p><a href="tel:+628111541514">+62 811-1541-514</a></p>
+                                </div>
+                            </div>
+
+                            <!-- Kampus / Lokasi -->
+                            <div class="contact-row">
+                                <div class="contact-icon-box">📍</div>
+                                <div class="contact-meta">
+                                    <h4>Afiliasi Kampus</h4>
+                                    <p>Universitas Paramadina, Jakarta Selatan, Indonesia</p>
+                                </div>
+                            </div>
+
+                            <!-- Blog -->
+                            <div class="contact-row">
+                                <div class="contact-icon-box">🌐</div>
+                                <div class="contact-meta">
+                                    <h4>Blog Pengetahuan Siber</h4>
+                                    <p><a href="https://scriptkiddieoflinux.blogspot.com" target="_blank" rel="noopener noreferrer">scriptkiddieoflinux.blogspot.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SLA Table (Elemen Table tambahan untuk kepatuhan kriteria) -->
+                    <div>
+                        <h4 style="color: var(--primary); margin-bottom: 0.5rem; font-size: 0.95rem;">⏱️ Tabel Respons & Jadwal Diskusi</h4>
+                        <table class="sla-table">
+                            <thead>
+                                <tr>
+                                    <th>Kategori Kontak</th>
+                                    <th>Estimasi Respons</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Koordinasi Vulnerability / CSIRT</td>
+                                    <!-- 3. CSS INLINE: Indikator status cepat -->
+                                    <td><span style="color: var(--accent-green); font-weight: bold;">Prioritas (&lt; 12 Jam)</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Pertanyaan Kolaborasi Akademik</td>
+                                    <td>1 x 24 Jam Kerja</td>
+                                </tr>
+                                <tr>
+                                    <td>Diskusi Proyek AI & Web</td>
+                                    <td>1 - 2 Hari Kerja</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </aside>
+
+                <!-- ========================================================
+                     ELEMEN FORM, INPUT, BUTTON (Wajib: Memenuhi Persyaratan)
+                     ======================================================== -->
+                <section class="contact-form-card">
+                    <h3 style="color: #ffffff; margin-bottom: 0.5rem;">Kirimkan Pesan Interaktif</h3>
+                    <p style="font-size: 0.9rem; margin-bottom: 1.5rem;">
+                        Seluruh isian formulir di bawah ini dibangun menggunakan komponen murni HTML5 & CSS3:
+                    </p>
+
+                    <form action="#" method="POST" class="interactive-form">
+                        
+                        <!-- Input Text: Nama Lengkap -->
+                        <div class="form-group">
+                            <label for="nama" class="form-label">
+                                Nama Lengkap <span class="required">*</span>
+                            </label>
+                            <input type="text" id="nama" name="nama" class="form-input" placeholder="Masukkan nama lengkap Anda..." required>
+                        </div>
+
+                        <!-- Input Email & Telepon (Grid 2 Kolom) -->
+                        <div class="grid-2">
+                            <div class="form-group">
+                                <label for="email" class="form-label">
+                                    Alamat Email <span class="required">*</span>
+                                </label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="nama@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telepon" class="form-label">
+                                    Nomor Telepon / WhatsApp
+                                </label>
+                                <input type="tel" id="telepon" name="telepon" class="form-input" placeholder="+62 812-xxxx-xxxx">
+                            </div>
+                        </div>
+
+                        <!-- Select Option: Topik Diskusi -->
+                        <div class="form-group">
+                            <label for="topik" class="form-label">
+                                Topik Pembahasan <span class="required">*</span>
+                            </label>
+                            <select id="topik" name="topik" class="form-select" required>
+                                <option value="" disabled selected>-- Pilih Topik Diskusi --</option>
+                                <option value="vuln-reporting">Koordinasi Pelaporan Kerentanan / CSIRT</option>
+                                <option value="ctf-collab">Kolaborasi Tim Capture The Flag (CTF)</option>
+                                <option value="ai-agent">Riset / Pengembangan AI Agent & Automation</option>
+                                <option value="web-dev">Proyek Pemrograman Web (HTML5 & CSS3)</option>
+                                <option value="lainnya">Pertanyaan Umum / Diskusi Santai</option>
+                            </select>
+                        </div>
+
+                        <!-- Input Radio: Kategori Afiliasi Pengirim -->
+                        <div class="form-group">
+                            <label class="form-label">Afiliasi Institusi Pengirim:</label>
+                            <div class="options-group">
+                                <label class="option-item">
+                                    <input type="radio" name="afiliasi" value="kampus" checked>
+                                    <span>Akademisi / Mahasiswa</span>
+                                </label>
+                                <label class="option-item">
+                                    <input type="radio" name="afiliasi" value="instansi">
+                                    <span>Instansi Pemerintah / BUMN</span>
+                                </label>
+                                <label class="option-item">
+                                    <input type="radio" name="afiliasi" value="komunitas">
+                                    <span>Komunitas IT & Siber</span>
+                                </label>
+                                <label class="option-item">
+                                    <input type="radio" name="afiliasi" value="pribadi">
+                                    <span>Individu / Pribadi</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Input Date: Usulan Tanggal Temu / Diskusi -->
+                        <div class="form-group">
+                            <label for="tanggal" class="form-label">
+                                Usulan Tanggal Diskusi (Opsional):
+                            </label>
+                            <input type="date" id="tanggal" name="tanggal" class="form-input" style="max-width: 250px;">
+                        </div>
+
+                        <!-- Textarea: Pesan / Keterangan -->
+                        <div class="form-group">
+                            <label for="pesan" class="form-label">
+                                Isi Pesan / Detail Keterangan <span class="required">*</span>
+                            </label>
+                            <textarea id="pesan" name="pesan" class="form-textarea" placeholder="Tuliskan rincian pesan atau agenda diskusi Anda di sini..." required></textarea>
+                        </div>
+
+                        <!-- Input Checkbox: Persetujuan Etis -->
+                        <div class="form-group">
+                            <label class="option-item" style="border: none; background: transparent; padding-left: 0;">
+                                <input type="checkbox" name="etika_setuju" required>
+                                <span style="font-size: 0.85rem; color: var(--text-secondary);">
+                                    Saya menyetujui pengiriman pesan ini untuk tujuan komunikasi yang etis dan bermanfaat. <span class="required">*</span>
+                                </span>
+                            </label>
+                        </div>
+
+                        <!-- Tombol-tombol Formulir (Elemen Button yang Diwajibkan) -->
+                        <div class="btn-group">
+                            <!-- 3. CSS INLINE: Style penekanan tombol submit -->
+                            <button type="submit" class="btn btn-primary" style="min-width: 160px; font-weight: 700;">
+                                🚀 Kirim Pesan
+                            </button>
+                            <button type="reset" class="btn btn-secondary">
+                                ↺ Reset Form
+                            </button>
+                        </div>
+
+                    </form>
+                </section>
+
+            </div>
+
+            <!-- Footer -->
+            <footer class="site-footer">
+                <ul class="footer-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="achievements.html">Achievements</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <p>&copy; 2026 Muhammad Jawsyan. Dibuat dengan <strong>Pure HTML5 & CSS3</strong> tanpa framework untuk memenuhi Tugas Kuliah Pemrograman Web.</p>
+            </footer>
+
+        </main>
+    </div>
+
+</body>
+</html>

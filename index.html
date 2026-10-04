@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portofolio Pribadi Muhammad Jawsyan - Mahasiswa Teknik Informatika Universitas Paramadina, Ethical Hacker, dan AI Enthusiast.">
+    <meta name="author" content="Muhammad Jawsyan">
+    <title>Muhammad Jawsyan | Portofolio Pribadi (Home & About)</title>
+    
+    <!-- 1. CSS EKSTERNAL (Sesuai Ketentuan Tugas) -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- 2. CSS INTERNAL (Sesuai Ketentuan Tugas: Styling spesifik halaman Home/About) -->
+    <style>
+        /* Internal CSS: Hero Banner & Profile Accents */
+        .hero-banner {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(5, 8, 17, 0.95) 100%),
+                        radial-gradient(circle at 80% 20%, rgba(0, 242, 254, 0.08) 0%, transparent 50%);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 3rem 2.5rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-banner::after {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(0, 242, 254, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-greeting {
+            font-size: 1rem;
+            color: var(--primary);
+            font-family: var(--font-mono);
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .hero-name {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        .hero-lead {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 750px;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Styling Khusus Tabel Biodata */
+        .biodata-table-wrapper {
+            margin: 1.5rem 0;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .biodata-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .biodata-table th, .biodata-table td {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.95rem;
+        }
+
+        .biodata-table th {
+            background-color: rgba(30, 41, 59, 0.5);
+            color: var(--primary);
+            text-align: left;
+            width: 30%;
+        }
+
+        .biodata-table td {
+            color: var(--text-primary);
+        }
+
+        .biodata-table tr:last-child th,
+        .biodata-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Gallery Grid Foto Dokumentasi */
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+            margin: 1.5rem 0;
+        }
+
+        .event-figure {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .event-figure:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .event-figure img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .event-caption {
+            padding: 0.75rem 1rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-align: center;
+            background-color: rgba(15, 23, 42, 0.8);
+        }
+
+        @media (max-width: 768px) {
+            .event-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-name {
+                font-size: 1.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-wrapper">
+        <!-- ==========================================
+             SIDEBAR NAVIGATION (Terinspirasi iPortfolio)
+             ========================================== -->
+        <header class="sidebar">
+            <div class="profile-card">
+                <div class="avatar-wrapper">
+                    <img src="assets/img/profile.jpg" alt="Foto Profil Muhammad Jawsyan" class="avatar-img">
+                    <span class="avatar-badge" title="Status: Aktif">✓</span>
+                </div>
+                <h1 class="profile-name">Muhammad Jawsyan</h1>
+                <p class="profile-tagline">Cyber Security & AI Enthusiast</p>
+                <p class="profile-sub">Mahasiswa Universitas Paramadina</p>
+            </div>
+
+            <!-- Menu Navigasi Antar Halaman (Minimal 3 Halaman) -->
+            <nav>
+                <ul class="nav-menu">
+                    <li>
+                        <a href="index.html" class="nav-link active">
+                            <span class="nav-icon">👤</span>
+                            <span>Home & About</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="skills.html" class="nav-link">
+                            <span class="nav-icon">⚡</span>
+                            <span>Skills & Experience</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="achievements.html" class="nav-link">
+                            <span class="nav-icon">🏆</span>
+                            <span>Achievements & Table</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.html" class="nav-link">
+                            <span class="nav-icon">📬</span>
+                            <span>Contact Me</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/muhammadjawsyan/" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn">in</a>
+                    <a href="https://github.com/j12k14a" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub">git</a>
+                    <a href="https://scriptkiddieoflinux.blogspot.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="Blog Edukasi">🌐</a>
+                    <a href="mailto:muhammad.jawsyan@paramadina.ac.id" class="social-btn" title="Email">✉️</a>
+                </div>
+                <p class="academic-badge">
+                    Tugas Pemrograman Web (Kelas A)<br>
+                    <strong>Universitas Paramadina 2026/2027</strong>
+                </p>
+            </div>
+        </header>
+
+        <!-- ==========================================
+             MAIN CONTENT AREA
+             ========================================== -->
+        <main class="main-content">
+            
+            <!-- Hero Banner Section -->
+            <section class="hero-banner">
+                <span class="hero-greeting">&gt; HELLO_WORLD // SYSTEM_READY</span>
+                <h2 class="hero-name">Muhammad Jawsyan</h2>
+                <p class="hero-lead">
+                    Mahasiswa Program Studi <strong>Teknik Informatika</strong> di Universitas Paramadina dengan fokus keahlian pada 
+                    <em>Offensive Security (Red Team)</em>, <em>Ethical Vulnerability Disclosure</em>, dan rekayasa <em>Artificial Intelligence (AI Agents)</em>.
+                </p>
+
+                <!-- 3. CSS INLINE (Sesuai Ketentuan Tugas: Membuktikan penerapan inline styling) -->
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
+                    <a href="achievements.html" class="btn btn-primary" style="box-shadow: 0 4px 15px rgba(0, 242, 254, 0.4);">
+                        Lihat Prestasi & Sertifikat 🏆
+                    </a>
+                    <a href="contact.html" class="btn btn-secondary" style="border: 1px solid rgba(255, 255, 255, 0.2);">
+                        Hubungi Saya ✉️
+                    </a>
+                </div>
+            </section>
+
+            <!-- Predikat Khusus Highlight Box -->
+            <section class="card card-gold" style="border-width: 2px;">
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
+                    <h3 style="color: var(--accent-gold); margin-bottom: 0;">🎖️ Predikat Khusus: Sertifikat Apresiasi Resmi</h3>
+                    <span class="badge badge-gold" style="font-size: 0.75rem;">Verified Researcher</span>
+                </div>
+                <p style="color: var(--text-primary); font-size: 1rem; line-height: 1.6;">
+                    Telah dianugerahi penghargaan resmi atas koordinasi penemuan dan pelaporan kerentanan sistem elektronik (Vulnerability Disclosure) secara etis dari dua institusi strategis pertahanan dan pemerintahan siber Republik Indonesia:
+                </p>
+                <div class="grid-2" style="margin-top: 1rem;">
+                    <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--accent-gold);">
+                        <strong style="color: #fff;">1. PUSSIBER TNI ANGKATAN DARAT</strong>
+                        <p style="font-size: 0.85rem; margin-top: 0.25rem; margin-bottom: 0; color: var(--text-secondary);">
+                            Sertifikat Apresiasi dari <em>Dansatlak Penangkalan Siber Pussiberad (Kartika CSIRT)</em> Nomor: <code>SERT/36/PUSSIBERAD/KARTIKA-CSIRT/IX/2026</code> (03 September 2026).
+                        </p>
+                    </div>
+                    <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--primary);">
+                        <strong style="color: #fff;">2. BSSA DISKOMINFOTIK PROVINSI DKI JAKARTA</strong>
+                        <p style="font-size: 0.85rem; margin-top: 0.25rem; margin-bottom: 0; color: var(--text-secondary);">
+                            Sertifikat Apresiasi dari <em>Badan Siber Sandi & Aplikasi Pemprov DKI Jakarta</em> Nomor: <code>113/BUG/BSSA/VIII/2026</code> (20 Agustus 2026).
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section (Biodata Lengkap) -->
+            <section class="card">
+                <header class="section-header">
+                    <span class="section-tag">BIODATA DIRI</span>
+                    <h2 class="section-title">Tentang Saya</h2>
+                    <p class="section-desc">
+                        Informasi lengkap mengenai latar belakang pendidikan, kompetensi inti, dan motivasi profesional saya di dunia teknologi informasi.
+                    </p>
+                </header>
+
+                <article>
+                    <p>
+                        Saya adalah seorang pembelajar yang antusias dan disiplin dengan pengalaman langsung dalam kompetisi keamanan siber, pelatihan penetrasi sistem, serta pengembangan agen AI. Saya memiliki komitmen tinggi terhadap etika keamanan siber (<em>Responsible Disclosure</em>) dalam membantu memperkuat infrastruktur digital nasional.
+                    </p>
+
+                    <!-- TABEL BIODATA (Elemen Table yang Diwajibkan) -->
+                    <div class="biodata-table-wrapper">
+                        <table class="biodata-table">
+                            <caption>Tabel Data Personal & Akademik</caption>
+                            <thead>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Keterangan Lengkap</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>Nama Lengkap</th>
+                                    <td>Muhammad Jawsyan</td>
+                                </tr>
+                                <tr>
+                                    <th>Program Studi</th>
+                                    <td>S1 Teknik Informatika (Fakultas Ilmu Rekayasa)</td>
+                                </tr>
+                                <tr>
+                                    <th>Perguruan Tinggi</th>
+                                    <td>Universitas Paramadina, Jakarta</td>
+                                </tr>
+                                <tr>
+                                    <th>Mata Kuliah Terkait</th>
+                                    <td>Pemrograman Web (Kelas A) - Dosen: Rahmad Syalevi, S. Kom., M.T.I</td>
+                                </tr>
+                                <tr>
+                                    <th>Bidang Peminatan</th>
+                                    <td>Cybersecurity, Red Team Operations, Artificial Intelligence, Web Development</td>
+                                </tr>
+                                <tr>
+                                    <th>Status Pelaporan Etis</th>
+                                    <td><span style="color: var(--accent-green); font-weight: bold;">● Diakui Resmi oleh PUSSIBER TNI AD & BSSA DKI Jakarta</span></td>
+                                </tr>
+                                <tr>
+                                    <th>Bahasa Pemrograman</th>
+                                    <td>HTML5, CSS3, Python, C++, Bash Scripting</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+            </section>
+
+            <!-- Dokumentasi Foto Kegiatan (Elemen Image & Figure) -->
+            <section class="card">
+                <header class="section-header">
+                    <span class="section-tag">DOKUMENTASI EVENT</span>
+                    <h2 class="section-title">Dokumentasi Aktivitas Lapangan</h2>
+                    <p class="section-desc">
+                        Dokumentasi keikutsertaan dalam kompetisi siber nasional Capture The Flag (CTF) - ZERO DAY 2026.
+                    </p>
+                </header>
+
+                <div class="event-grid">
+                    <figure class="event-figure">
+                        <img src="assets/img/event/photo1.jpg" alt="Presentasi dan Diskusi Teknis Zero Day 2026">
+                        <figcaption class="event-caption">Sesi Diskusi & Presentasi Teknis CTF</figcaption>
+                    </figure>
+                    <figure class="event-figure">
+                        <img src="assets/img/event/photo2.jpg" alt="Pemaparan Solusi Keamanan Siber Zero Day">
+                        <figcaption class="event-caption">Pemaparan Solusi Keamanan Siber</figcaption>
+                    </figure>
+                    <figure class="event-figure">
+                        <img src="assets/img/event/photo3.jpg" alt="Dokumentasi di Backdrop ZERO DAY 2026">
+                        <figcaption class="event-caption">Stand Banner ZERO DAY 2026 (Juara 4)</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <!-- Link Navigasi Cepat (Elemen Link & List) -->
+            <aside class="card card-accent">
+                <h3 class="card-title">🔗 Jelajahi Halaman Lainnya:</h3>
+                <ul class="list-styled">
+                    <li>
+                        <a href="skills.html" style="font-weight: 600;">Halaman Skills & Experience</a>: 
+                        Menampilkan daftar keahlian teknis, progress bar kemampuan, dan timeline pengalaman terurut.
+                    </li>
+                    <li>
+                        <a href="achievements.html" style="font-weight: 600;">Halaman Achievements & Table</a>: 
+                        Menampilkan tabel data verifikasi sertifikat lengkap serta galeri berkas sertifikasi.
+                    </li>
+                    <li>
+                        <a href="contact.html" style="font-weight: 600;">Halaman Contact Me</a>: 
+                        Menyediakan formulir interaktif pengiriman pesan (Form, Input, Button) serta rincian kontak.
+                    </li>
+                </ul>
+            </aside>
+
+            <!-- Footer Dokumen HTML5 -->
+            <footer class="site-footer">
+                <ul class="footer-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="achievements.html">Achievements</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <p>&copy; 2026 Muhammad Jawsyan. Dibuat dengan <strong>Pure HTML5 & CSS3</strong> tanpa framework untuk memenuhi Tugas Kuliah Pemrograman Web.</p>
+            </footer>
+
+        </main>
+    </div>
+
+</body>
+</html>

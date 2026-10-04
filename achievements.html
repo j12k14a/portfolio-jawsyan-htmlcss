@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Katalog Sertifikasi, Piagam Apresiasi, dan Penghargaan Resmi Muhammad Jawsyan.">
+    <meta name="author" content="Muhammad Jawsyan">
+    <title>Muhammad Jawsyan | Achievements & Certificates</title>
+    
+    <!-- 1. CSS EKSTERNAL -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- 2. CSS INTERNAL (Styling khusus halaman Achievements & Tabel Data) -->
+    <style>
+        /* Styling Khusus Tabel Sertifikasi */
+        .achievements-table-container {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow-card);
+        }
+
+        .achieve-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .achieve-table caption {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-align: left;
+            padding-bottom: 1.25rem;
+            border-bottom: 2px solid var(--border);
+            margin-bottom: 1rem;
+        }
+
+        .achieve-table th {
+            background-color: #162235;
+            color: var(--primary);
+            padding: 1rem;
+            text-align: left;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .achieve-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: middle;
+        }
+
+        .achieve-table tbody tr:hover {
+            background-color: rgba(0, 242, 254, 0.04);
+        }
+
+        .achieve-table tfoot td {
+            background-color: #162235;
+            font-weight: 700;
+            color: #ffffff;
+            padding: 1rem;
+            border-top: 2px solid var(--border);
+        }
+
+        /* Filter Tabs (Murni HTML & CSS Link) */
+        .filter-nav {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .filter-pill {
+            padding: 0.4rem 0.85rem;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .filter-pill:hover, .filter-pill.active {
+            color: var(--primary);
+            border-color: var(--primary);
+            background-color: rgba(0, 242, 254, 0.1);
+        }
+
+        /* Responsive Grid Galeri */
+        .cert-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-wrapper">
+        <!-- Sidebar Navigation -->
+        <header class="sidebar">
+            <div class="profile-card">
+                <div class="avatar-wrapper">
+                    <img src="assets/img/profile.jpg" alt="Foto Profil Muhammad Jawsyan" class="avatar-img">
+                    <span class="avatar-badge" title="Status: Aktif">✓</span>
+                </div>
+                <h1 class="profile-name">Muhammad Jawsyan</h1>
+                <p class="profile-tagline">Cyber Security & AI Enthusiast</p>
+                <p class="profile-sub">Mahasiswa Universitas Paramadina</p>
+            </div>
+
+            <!-- Menu Navigasi Antar Halaman -->
+            <nav>
+                <ul class="nav-menu">
+                    <li>
+                        <a href="index.html" class="nav-link">
+                            <span class="nav-icon">👤</span>
+                            <span>Home & About</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="skills.html" class="nav-link">
+                            <span class="nav-icon">⚡</span>
+                            <span>Skills & Experience</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="achievements.html" class="nav-link active">
+                            <span class="nav-icon">🏆</span>
+                            <span>Achievements & Table</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.html" class="nav-link">
+                            <span class="nav-icon">📬</span>
+                            <span>Contact Me</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/muhammadjawsyan/" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn">in</a>
+                    <a href="https://github.com/j12k14a" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub">git</a>
+                    <a href="https://scriptkiddieoflinux.blogspot.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="Blog Edukasi">🌐</a>
+                    <a href="mailto:muhammad.jawsyan@paramadina.ac.id" class="social-btn" title="Email">✉️</a>
+                </div>
+                <p class="academic-badge">
+                    Tugas Pemrograman Web (Kelas A)<br>
+                    <strong>Universitas Paramadina 2026/2027</strong>
+                </p>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            
+            <section class="section-header">
+                <span class="section-tag">REKAPITULASI RESMI</span>
+                <h2 class="section-title">Achievements & Certification Portfolio</h2>
+                <p class="section-desc">
+                    Dokumentasi sertifikat apresiasi predikat khusus dari instansi siber militer dan sipil, kemenangan perlombaan CTF, serta lisensi profesional.
+                </p>
+            </section>
+
+            <!-- ========================================================
+                 ELEMEN TABEL UTAMA (Wajib: Memenuhi Persyaratan Tugas)
+                 ======================================================== -->
+            <section class="achievements-table-container">
+                <div class="table-responsive">
+                    <table class="achieve-table">
+                        <caption>📋 Tabel Rekapitulasi Prestasi, Apresiasi & Sertifikasi Resmi</caption>
+                        <thead>
+                            <tr>
+                                <th style="width: 50px;">No</th>
+                                <th>Tanggal</th>
+                                <th>Nama Prestasi / Sertifikasi</th>
+                                <th>Instansi / Penyelenggara</th>
+                                <th>No. Registrasi / Dokumen</th>
+                                <th>Kategori</th>
+                                <th>Status Verifikasi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 1. PUSSIBER TNI AD -->
+                            <tr style="background: rgba(245, 158, 11, 0.06);">
+                                <td><strong>01</strong></td>
+                                <td>03 Sep 2026</td>
+                                <td>
+                                    <strong style="color: #fff;">Sertifikat Apresiasi: Temuan Kerentanan & Pelaporan Etis</strong><br>
+                                    <small style="color: var(--accent-gold);">★ Predikat Khusus Keamanan Siber</small>
+                                </td>
+                                <td>PUSSIBER TNI ANGKATAN DARAT (Kartika CSIRT)</td>
+                                <td><code>SERT/36/PUSSIBERAD/KARTIKA-CSIRT/IX/2026</code></td>
+                                <td><span class="badge badge-gold">Predikat Khusus</span></td>
+                                <td>
+                                    <!-- 3. CSS INLINE: Badge styling langsung pada elemen -->
+                                    <a href="assets/img/cert_pussiber_tni_ad.pdf" target="_blank" style="display: inline-block; background-color: #10b981; color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; text-decoration: none;">
+                                        ✓ Dokumen Sah (PDF)
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- 2. BSSA DKI Jakarta -->
+                            <tr style="background: rgba(0, 242, 254, 0.05);">
+                                <td><strong>02</strong></td>
+                                <td>20 Agu 2026</td>
+                                <td>
+                                    <strong style="color: #fff;">Sertifikat Apresiasi: Pelaporan Vulnerability Sistem Elektronik</strong><br>
+                                    <small style="color: var(--primary);">★ Predikat Khusus Pemprov DKI Jakarta</small>
+                                </td>
+                                <td>BSSA Diskominfotik Provinsi DKI Jakarta</td>
+                                <td><code>113/BUG/BSSA/VIII/2026</code></td>
+                                <td><span class="badge badge-cyan">Predikat Khusus</span></td>
+                                <td>
+                                    <a href="assets/img/cert_bssa_dki_jakarta.pdf" target="_blank" style="display: inline-block; background-color: #10b981; color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; text-decoration: none;">
+                                        ✓ Dokumen Sah (PDF)
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- 3. Zero Day CTF -->
+                            <tr>
+                                <td><strong>03</strong></td>
+                                <td>28 Jun 2026</td>
+                                <td>
+                                    <strong style="color: #fff;">Juara 4 - 4th Place Scholar Battle Winner</strong><br>
+                                    <small>Capture The Flag (CTF) Competition - ZERO DAY</small>
+                                </td>
+                                <td>DSG (Dunia Siber Gemilang) & Filkom</td>
+                                <td><code>ZD-2026-CHAMP-04</code></td>
+                                <td><span class="badge badge-blue">Kompetisi CTF</span></td>
+                                <td><span style="color: var(--accent-green); font-weight: 600;">Terverifikasi Juara</span></td>
+                            </tr>
+
+                            <!-- 4. SEVIMA CTI -->
+                            <tr>
+                                <td><strong>04</strong></td>
+                                <td>29 Jun 2026</td>
+                                <td>SEVIMA Cyber Threat Intelligence sebagai Core Intel IT</td>
+                                <td>SEVIMA (Sentra Vidya Utama)</td>
+                                <td><code>1000/SRTFK/SVM/VI/2026</code></td>
+                                <td><span class="badge badge-blue">Webinar & MOOC</span></td>
+                                <td><span style="color: var(--accent-green); font-weight: 600;">Lulus Peserta</span></td>
+                            </tr>
+
+                            <!-- 5. SEVIMA AI Disruptions -->
+                            <tr>
+                                <td><strong>05</strong></td>
+                                <td>22 Jun 2026</td>
+                                <td>SEVIMA Security Challenge: AI Disruptions on Cyber Security</td>
+                                <td>SEVIMA (Sentra Vidya Utama)</td>
+                                <td><code>994/SRTFK/SVM/VI/2026</code></td>
+                                <td><span class="badge badge-blue">Webinar & MOOC</span></td>
+                                <td><span style="color: var(--accent-green); font-weight: 600;">Lulus Peserta</span></td>
+                            </tr>
+
+                            <!-- 6. SEVIMA 10 JP -->
+                            <tr>
+                                <td><strong>06</strong></td>
+                                <td>15 Jun 2026</td>
+                                <td>SEVIMA Security Challenge 2026 (10 JP, Online MOOC)</td>
+                                <td>SEVIMA (Sentra Vidya Utama)</td>
+                                <td><code>903/SRTFK/SVM/VI/2026</code></td>
+                                <td><span class="badge badge-blue">Pelatihan Jam Pelajaran</span></td>
+                                <td><span style="color: var(--accent-green); font-weight: 600;">10 JP Selesai</span></td>
+                            </tr>
+
+                            <!-- 7. Hackviser -->
+                            <tr>
+                                <td><strong>07</strong></td>
+                                <td>19 Jun 2024</td>
+                                <td>CORE Cybersecurity Foundations</td>
+                                <td>Hackviser Online Security Academy</td>
+                                <td><code>HV-CORE-CERT-2024</code></td>
+                                <td><span class="badge badge-blue">Sertifikasi Global</span></td>
+                                <td><span style="color: var(--accent-green); font-weight: 600;">Certified</span></td>
+                            </tr>
+
+                            <!-- 8. CRPO -->
+                            <tr>
+                                <td><strong>08</strong></td>
+                                <td>2024</td>
+                                <td>Certified Ransomware Protection Officer (CRPO)</td>
+                                <td>EU Cyber Academy (European Cybersecurity)</td>
+                                <td><code>CRPO-EU-CERT-64D6</code></td>
+                                <td><span class="badge badge-blue">Sertifikasi Spesialis</span></td>
+                                <td><span style="color: var(--accent-green); font-weight: 600;">Certified</span></td>
+                            </tr>
+
+                            <!-- 9. Microsoft AI -->
+                            <tr>
+                                <td><strong>09</strong></td>
+                                <td>31 Jan 2024</td>
+                                <td>Generative AI for Youth Training</td>
+                                <td>Microsoft AI Skills</td>
+                                <td><code>MS-GENAI-2024-ID</code></td>
+                                <td><span class="badge badge-blue">Pelatihan AI</span></td>
+                                <td><span style="color: var(--accent-green); font-weight: 600;">Certified</span></td>
+                            </tr>
+
+                            <!-- 10. Cisco -->
+                            <tr>
+                                <td><strong>10</strong></td>
+                                <td>21 Jan 2024</td>
+                                <td>Introduction to Cybersecurity Course Completion</td>
+                                <td>Cisco Networking Academy</td>
+                                <td><code>CISCO-NETACAD-INTRO</code></td>
+                                <td><span class="badge badge-blue">Kursus Industri</span></td>
+                                <td><span style="color: var(--accent-green); font-weight: 600;">Completed</span></td>
+                            </tr>
+
+                            <!-- 11. Merdeka Siber -->
+                            <tr>
+                                <td><strong>11</strong></td>
+                                <td>20 Jan 2024</td>
+                                <td>Bootcamp Online Cyber Security Beginner Batch 1</td>
+                                <td>Merdeka Siber Academy</td>
+                                <td><code>MS/BOCSE/COE/24/2026/011</code></td>
+                                <td><span class="badge badge-blue">Bootcamp Intensif</span></td>
+                                <td><span style="color: var(--accent-green); font-weight: 600;">Lulus Predikat Baik</span></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4">Total Dokumen Prestasi & Sertifikasi Terdaftar:</td>
+                                <td colspan="3" style="text-align: right; color: var(--primary);">11 Dokumen Terverifikasi Sah</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </section>
+
+            <!-- ========================================================
+                 GALERI KARTU SERTIFIKAT VISUAL (Elemen Image & Card)
+                 ======================================================== -->
+            <section>
+                <header class="section-header">
+                    <span class="section-tag">GALERI VISUAL</span>
+                    <h3 class="section-title">Dokumentasi Visual Piagam & Sertifikat</h3>
+                    <p class="section-desc">
+                        Klik tombol "Lihat Sertifikat" untuk meninjau berkas beresolusi tinggi atau mengunduh salinan resmi dokumen PDF.
+                    </p>
+                </header>
+
+                <div class="cert-gallery-grid">
+                    
+                    <!-- 1. PUSSIBER TNI AD Card -->
+                    <article class="cert-card" style="border: 2px solid var(--accent-gold);">
+                        <div class="cert-img-wrapper">
+                            <img src="assets/img/cert_pussiber_tni_ad.png" alt="Sertifikat Apresiasi PUSSIBER TNI AD" class="cert-img">
+                        </div>
+                        <div class="cert-body">
+                            <div>
+                                <span class="badge badge-gold" style="margin-bottom: 0.5rem;">Predikat Khusus TNI AD</span>
+                                <h4 class="cert-title">Sertifikat Apresiasi: PUSSIBER TNI AD</h4>
+                                <p class="cert-meta">
+                                    <strong>Penerbit:</strong> Dansatlak Penangkalan Siber Pussiberad (Kartika CSIRT)<br>
+                                    <strong>No:</strong> <code>SERT/36/PUSSIBERAD/KARTIKA-CSIRT/IX/2026</code><br>
+                                    <strong>Tanggal:</strong> 03 September 2026
+                                </p>
+                            </div>
+                            <div class="btn-group">
+                                <a href="assets/img/cert_pussiber_tni_ad.png" target="_blank" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+                                    Buka Gambar 🔍
+                                </a>
+                                <a href="assets/img/cert_pussiber_tni_ad.pdf" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+                                    Unduh PDF 📄
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 2. BSSA DKI Jakarta Card -->
+                    <article class="cert-card" style="border: 2px solid var(--primary);">
+                        <div class="cert-img-wrapper">
+                            <img src="assets/img/cert_bssa_dki_jakarta.png" alt="Sertifikat Apresiasi BSSA Diskominfotik DKI Jakarta" class="cert-img">
+                        </div>
+                        <div class="cert-body">
+                            <div>
+                                <span class="badge badge-cyan" style="margin-bottom: 0.5rem;">Predikat Khusus Pemprov DKI</span>
+                                <h4 class="cert-title">Sertifikat Apresiasi: BSSA DKI Jakarta</h4>
+                                <p class="cert-meta">
+                                    <strong>Penerbit:</strong> Diskominfotik Pemprov DKI Jakarta (BSSA)<br>
+                                    <strong>No:</strong> <code>113/BUG/BSSA/VIII/2026</code><br>
+                                    <strong>Tanggal:</strong> 20 Agustus 2026
+                                </p>
+                            </div>
+                            <div class="btn-group">
+                                <a href="assets/img/cert_bssa_dki_jakarta.png" target="_blank" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+                                    Buka Gambar 🔍
+                                </a>
+                                <a href="assets/img/cert_bssa_dki_jakarta.pdf" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+                                    Unduh PDF 📄
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 3. Zero Day CTF Card -->
+                    <article class="cert-card">
+                        <div class="cert-img-wrapper">
+                            <img src="assets/img/cert_zeroday.png" alt="Sertifikat Juara 4 CTF Zero Day 2026" class="cert-img">
+                        </div>
+                        <div class="cert-body">
+                            <div>
+                                <span class="badge badge-blue" style="margin-bottom: 0.5rem;">Juara 4 Nasional</span>
+                                <h4 class="cert-title">4th Place Scholar Battle - CTF ZERO DAY</h4>
+                                <p class="cert-meta">
+                                    <strong>Penyelenggara:</strong> DSG & Filkom<br>
+                                    <strong>Kategori:</strong> Capture The Flag (CTF) Competition
+                                </p>
+                            </div>
+                            <div class="btn-group">
+                                <a href="assets/img/cert_zeroday.png" target="_blank" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+                                    Buka Sertifikat 🔍
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 4. SEVIMA 10 JP -->
+                    <article class="cert-card">
+                        <div class="cert-img-wrapper">
+                            <img src="assets/img/cert_sevima_10jp.jpg" alt="SEVIMA Security Challenge 10 JP" class="cert-img">
+                        </div>
+                        <div class="cert-body">
+                            <div>
+                                <span class="badge badge-blue" style="margin-bottom: 0.5rem;">SEVIMA MOOC</span>
+                                <h4 class="cert-title">Security Challenge 2026 (10 JP)</h4>
+                                <p class="cert-meta">
+                                    <strong>Instansi:</strong> PT Sentra Vidya Utama (SEVIMA)<br>
+                                    <strong>No:</strong> <code>903/SRTFK/SVM/VI/2026</code>
+                                </p>
+                            </div>
+                            <div class="btn-group">
+                                <a href="assets/img/cert_sevima_10jp.jpg" target="_blank" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+                                    Buka Sertifikat 🔍
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 5. SEVIMA AI Disruptions -->
+                    <article class="cert-card">
+                        <div class="cert-img-wrapper">
+                            <img src="assets/img/cert_sevima_ai.jpg" alt="SEVIMA AI Disruptions" class="cert-img">
+                        </div>
+                        <div class="cert-body">
+                            <div>
+                                <span class="badge badge-blue" style="margin-bottom: 0.5rem;">AI & Cybersecurity</span>
+                                <h4 class="cert-title">AI Disruptions on Cyber Security</h4>
+                                <p class="cert-meta">
+                                    <strong>Instansi:</strong> PT Sentra Vidya Utama (SEVIMA)<br>
+                                    <strong>No:</strong> <code>994/SRTFK/SVM/VI/2026</code>
+                                </p>
+                            </div>
+                            <div class="btn-group">
+                                <a href="assets/img/cert_sevima_ai.jpg" target="_blank" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+                                    Buka Sertifikat 🔍
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 6. SEVIMA CTI -->
+                    <article class="cert-card">
+                        <div class="cert-img-wrapper">
+                            <img src="assets/img/cert_sevima_cti.jpg" alt="SEVIMA Cyber Threat Intelligence" class="cert-img">
+                        </div>
+                        <div class="cert-body">
+                            <div>
+                                <span class="badge badge-blue" style="margin-bottom: 0.5rem;">Threat Intelligence</span>
+                                <h4 class="cert-title">Cyber Threat Intelligence Core IT</h4>
+                                <p class="cert-meta">
+                                    <strong>Instansi:</strong> PT Sentra Vidya Utama (SEVIMA)<br>
+                                    <strong>No:</strong> <code>1000/SRTFK/SVM/VI/2026</code>
+                                </p>
+                            </div>
+                            <div class="btn-group">
+                                <a href="assets/img/cert_sevima_cti.jpg" target="_blank" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+                                    Buka Sertifikat 🔍
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 7. Cisco -->
+                    <article class="cert-card">
+                        <div class="cert-img-wrapper">
+                            <img src="assets/img/cert_cisco.png" alt="Cisco Introduction to Cybersecurity" class="cert-img">
+                        </div>
+                        <div class="cert-body">
+                            <div>
+                                <span class="badge badge-blue" style="margin-bottom: 0.5rem;">Cisco Networking</span>
+                                <h4 class="cert-title">Introduction to Cybersecurity</h4>
+                                <p class="cert-meta">
+                                    <strong>Instansi:</strong> Cisco Networking Academy<br>
+                                    <strong>Tanggal:</strong> 21 Januari 2024
+                                </p>
+                            </div>
+                            <div class="btn-group">
+                                <a href="assets/img/cert_cisco.png" target="_blank" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+                                    Buka Sertifikat 🔍
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 8. EU Cyber Academy CRPO -->
+                    <article class="cert-card">
+                        <div class="cert-img-wrapper">
+                            <img src="assets/img/cert_crpo.png" alt="Certified CRPO EU Cyber Academy" class="cert-img">
+                        </div>
+                        <div class="cert-body">
+                            <div>
+                                <span class="badge badge-blue" style="margin-bottom: 0.5rem;">Ransomware Defense</span>
+                                <h4 class="cert-title">Certified CRPO - EU Cyber Academy</h4>
+                                <p class="cert-meta">
+                                    <strong>Instansi:</strong> European Cyber Academy<br>
+                                    <strong>Kualifikasi:</strong> Ransomware Protection Officer
+                                </p>
+                            </div>
+                            <div class="btn-group">
+                                <a href="assets/img/cert_crpo.png" target="_blank" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+                                    Buka Sertifikat 🔍
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 9. Microsoft AI -->
+                    <article class="cert-card">
+                        <div class="cert-img-wrapper">
+                            <img src="assets/img/cert_microsoft_ai.png" alt="Microsoft Generative AI for Youth" class="cert-img">
+                        </div>
+                        <div class="cert-body">
+                            <div>
+                                <span class="badge badge-blue" style="margin-bottom: 0.5rem;">Microsoft AI</span>
+                                <h4 class="cert-title">Generative AI for Youth Training</h4>
+                                <p class="cert-meta">
+                                    <strong>Instansi:</strong> Microsoft AI Skills<br>
+                                    <strong>Tanggal:</strong> 31 Januari 2024
+                                </p>
+                            </div>
+                            <div class="btn-group">
+                                <a href="assets/img/cert_microsoft_ai.png" target="_blank" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+                                    Buka Sertifikat 🔍
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 10. Hackviser -->
+                    <article class="cert-card">
+                        <div class="cert-img-wrapper">
+                            <img src="assets/img/cert_hackviser.png" alt="Hackviser Core Cybersecurity" class="cert-img">
+                        </div>
+                        <div class="cert-body">
+                            <div>
+                                <span class="badge badge-blue" style="margin-bottom: 0.5rem;">Hackviser</span>
+                                <h4 class="cert-title">Core Cybersecurity Foundations</h4>
+                                <p class="cert-meta">
+                                    <strong>Instansi:</strong> Hackviser Academy<br>
+                                    <strong>Tanggal:</strong> 19 Juni 2024
+                                </p>
+                            </div>
+                            <div class="btn-group">
+                                <a href="assets/img/cert_hackviser.png" target="_blank" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+                                    Buka Sertifikat 🔍
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 11. Merdeka Siber -->
+                    <article class="cert-card">
+                        <div class="cert-img-wrapper">
+                            <img src="assets/img/cert_merdekasiber.png" alt="Merdeka Siber Bootcamp" class="cert-img">
+                        </div>
+                        <div class="cert-body">
+                            <div>
+                                <span class="badge badge-blue" style="margin-bottom: 0.5rem;">Merdeka Siber</span>
+                                <h4 class="cert-title">Cyber Security Beginner Bootcamp</h4>
+                                <p class="cert-meta">
+                                    <strong>Penyelenggara:</strong> Merdeka Siber Academy Batch 1<br>
+                                    <strong>Tanggal:</strong> 20 Januari 2024
+                                </p>
+                            </div>
+                            <div class="btn-group">
+                                <a href="assets/img/cert_merdekasiber.png" target="_blank" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+                                    Buka Sertifikat 🔍
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="site-footer">
+                <ul class="footer-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="achievements.html">Achievements</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <p>&copy; 2026 Muhammad Jawsyan. Dibuat dengan <strong>Pure HTML5 & CSS3</strong> tanpa framework untuk memenuhi Tugas Kuliah Pemrograman Web.</p>
+            </footer>
+
+        </main>
+    </div>
+
+</body>
+</html>
