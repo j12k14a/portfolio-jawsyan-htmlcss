@@ -1,377 +1,942 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portofolio Pribadi Muhammad Jawsyan - Mahasiswa Teknik Informatika Universitas Paramadina, Ethical Hacker, dan AI Enthusiast.">
     <meta name="author" content="Muhammad Jawsyan">
-    <title>Muhammad Jawsyan | Portofolio Pribadi (Home & About)</title>
+    <title>Muhammad Jawsyan | Portfolio - Cyber Security & AI</title>
     
-    <!-- 1. CSS EKSTERNAL (Sesuai Ketentuan Tugas) -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- 1. Bootstrap 5.3.3 CSS Framework (Sesuai Ketentuan Tugas) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icons 1.11.3 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Custom Cyber Dark Theme Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
-
-    <!-- 2. CSS INTERNAL (Sesuai Ketentuan Tugas: Styling spesifik halaman Home/About) -->
-    <style>
-        /* Internal CSS: Hero Banner & Profile Accents */
-        .hero-banner {
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(5, 8, 17, 0.95) 100%),
-                        radial-gradient(circle at 80% 20%, rgba(0, 242, 254, 0.08) 0%, transparent 50%);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 3rem 2.5rem;
-            margin-bottom: 2.5rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-banner::after {
-            content: "";
-            position: absolute;
-            top: -50px;
-            right: -50px;
-            width: 150px;
-            height: 150px;
-            background: radial-gradient(circle, rgba(0, 242, 254, 0.2) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .hero-greeting {
-            font-size: 1rem;
-            color: var(--primary);
-            font-family: var(--font-mono);
-            margin-bottom: 0.5rem;
-            display: inline-block;
-        }
-
-        .hero-name {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #ffffff;
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.03em;
-        }
-
-        .hero-lead {
-            font-size: 1.15rem;
-            color: var(--text-secondary);
-            max-width: 750px;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Styling Khusus Tabel Biodata */
-        .biodata-table-wrapper {
-            margin: 1.5rem 0;
-            background-color: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .biodata-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .biodata-table th, .biodata-table td {
-            padding: 1rem 1.25rem;
-            border-bottom: 1px solid var(--border);
-            font-size: 0.95rem;
-        }
-
-        .biodata-table th {
-            background-color: rgba(30, 41, 59, 0.5);
-            color: var(--primary);
-            text-align: left;
-            width: 30%;
-        }
-
-        .biodata-table td {
-            color: var(--text-primary);
-        }
-
-        .biodata-table tr:last-child th,
-        .biodata-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        /* Gallery Grid Foto Dokumentasi */
-        .event-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.25rem;
-            margin: 1.5rem 0;
-        }
-
-        .event-figure {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            overflow: hidden;
-            transition: var(--transition);
-        }
-
-        .event-figure:hover {
-            transform: translateY(-4px);
-            border-color: var(--primary);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-        }
-
-        .event-figure img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .event-caption {
-            padding: 0.75rem 1rem;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            text-align: center;
-            background-color: rgba(15, 23, 42, 0.8);
-        }
-
-        @media (max-width: 768px) {
-            .event-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero-name {
-                font-size: 1.85rem;
-            }
-        }
-    </style>
 </head>
-<body>
+<body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="100" tabindex="0">
 
-    <div class="page-wrapper">
-        <!-- ==========================================
-             SIDEBAR NAVIGATION (Terinspirasi iPortfolio)
-             ========================================== -->
-        <header class="sidebar">
-            <div class="profile-card">
-                <div class="avatar-wrapper">
-                    <img src="assets/img/profile.jpg" alt="Foto Profil Muhammad Jawsyan" class="avatar-img">
-                    <span class="avatar-badge" title="Status: Aktif">✓</span>
-                </div>
-                <h1 class="profile-name">Muhammad Jawsyan</h1>
-                <p class="profile-tagline">Cyber Security & AI Enthusiast</p>
-                <p class="profile-sub">Mahasiswa Universitas Paramadina</p>
-            </div>
-
-            <!-- Menu Navigasi Antar Halaman (Minimal 3 Halaman) -->
-            <nav>
-                <ul class="nav-menu">
-                    <li>
-                        <a href="index.html" class="nav-link active">
-                            <span class="nav-icon">👤</span>
-                            <span>Home & About</span>
+    <!-- ==========================================
+         SEMANTIC HEADER & NAVBAR BOOTSTRAP 5
+         ========================================== -->
+    <header class="sticky-top">
+        <nav id="mainNavbar" class="navbar navbar-expand-lg custom-navbar">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="#beranda">
+                    <span class="text-cyan font-mono">&gt;</span>
+                    <span>Jawsyan<span>_</span></span>
+                </a>
+                
+                <!-- Mobile Toggler Button (375px Responsive) -->
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <!-- Nav Links -->
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-1">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#beranda"><i class="bi bi-house-door me-1"></i> Beranda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tentang"><i class="bi bi-person me-1"></i> Tentang Saya</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#proyek"><i class="bi bi-code-slash me-1"></i> Proyek</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#prestasi"><i class="bi bi-trophy me-1"></i> Prestasi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#kontak"><i class="bi bi-envelope me-1"></i> Kontak</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="ms-lg-3 mt-3 mt-lg-0">
+                        <a href="#kontak" class="btn btn-sm btn-primary px-3">
+                            <i class="bi bi-send me-1"></i> Hubungi Saya
                         </a>
-                    </li>
-                    <li>
-                        <a href="skills.html" class="nav-link">
-                            <span class="nav-icon">⚡</span>
-                            <span>Skills & Experience</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="achievements.html" class="nav-link">
-                            <span class="nav-icon">🏆</span>
-                            <span>Achievements & Table</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="contact.html" class="nav-link">
-                            <span class="nav-icon">📬</span>
-                            <span>Contact Me</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-
-            <div class="sidebar-footer">
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/muhammadjawsyan/" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn">in</a>
-                    <a href="https://github.com/j12k14a" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub">git</a>
-                    <a href="https://scriptkiddieoflinux.blogspot.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="Blog Edukasi">🌐</a>
-                    <a href="mailto:muhammad.jawsyan@paramadina.ac.id" class="social-btn" title="Email">✉️</a>
-                </div>
-                <p class="academic-badge">
-                    Tugas Pemrograman Web (Kelas A)<br>
-                    <strong>Universitas Paramadina 2026/2027</strong>
-                </p>
-            </div>
-        </header>
-
-        <!-- ==========================================
-             MAIN CONTENT AREA
-             ========================================== -->
-        <main class="main-content">
-            
-            <!-- Hero Banner Section -->
-            <section class="hero-banner">
-                <span class="hero-greeting">&gt; HELLO_WORLD // SYSTEM_READY</span>
-                <h2 class="hero-name">Muhammad Jawsyan</h2>
-                <p class="hero-lead">
-                    Mahasiswa Program Studi <strong>Teknik Informatika</strong> di Universitas Paramadina dengan fokus keahlian pada 
-                    <em>Offensive Security (Red Team)</em>, <em>Ethical Vulnerability Disclosure</em>, dan rekayasa <em>Artificial Intelligence (AI Agents)</em>.
-                </p>
-
-                <!-- 3. CSS INLINE (Sesuai Ketentuan Tugas: Membuktikan penerapan inline styling) -->
-                <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
-                    <a href="achievements.html" class="btn btn-primary" style="box-shadow: 0 4px 15px rgba(0, 242, 254, 0.4);">
-                        Lihat Prestasi & Sertifikat 🏆
-                    </a>
-                    <a href="contact.html" class="btn btn-secondary" style="border: 1px solid rgba(255, 255, 255, 0.2);">
-                        Hubungi Saya ✉️
-                    </a>
-                </div>
-            </section>
-
-            <!-- Predikat Khusus Highlight Box -->
-            <section class="card card-gold" style="border-width: 2px;">
-                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
-                    <h3 style="color: var(--accent-gold); margin-bottom: 0;">🎖️ Predikat Khusus: Sertifikat Apresiasi Resmi</h3>
-                    <span class="badge badge-gold" style="font-size: 0.75rem;">Verified Researcher</span>
-                </div>
-                <p style="color: var(--text-primary); font-size: 1rem; line-height: 1.6;">
-                    Telah dianugerahi penghargaan resmi atas koordinasi penemuan dan pelaporan kerentanan sistem elektronik (Vulnerability Disclosure) secara etis dari dua institusi strategis pertahanan dan pemerintahan siber Republik Indonesia:
-                </p>
-                <div class="grid-2" style="margin-top: 1rem;">
-                    <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--accent-gold);">
-                        <strong style="color: #fff;">1. PUSSIBER TNI ANGKATAN DARAT</strong>
-                        <p style="font-size: 0.85rem; margin-top: 0.25rem; margin-bottom: 0; color: var(--text-secondary);">
-                            Sertifikat Apresiasi dari <em>Dansatlak Penangkalan Siber Pussiberad (Kartika CSIRT)</em> Nomor: <code>SERT/36/PUSSIBERAD/KARTIKA-CSIRT/IX/2026</code> (03 September 2026).
-                        </p>
-                    </div>
-                    <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--primary);">
-                        <strong style="color: #fff;">2. BSSA DISKOMINFOTIK PROVINSI DKI JAKARTA</strong>
-                        <p style="font-size: 0.85rem; margin-top: 0.25rem; margin-bottom: 0; color: var(--text-secondary);">
-                            Sertifikat Apresiasi dari <em>Badan Siber Sandi & Aplikasi Pemprov DKI Jakarta</em> Nomor: <code>113/BUG/BSSA/VIII/2026</code> (20 Agustus 2026).
-                        </p>
                     </div>
                 </div>
-            </section>
+            </div>
+        </nav>
+    </header>
 
-            <!-- About Section (Biodata Lengkap) -->
-            <section class="card">
-                <header class="section-header">
-                    <span class="section-tag">BIODATA DIRI</span>
-                    <h2 class="section-title">Tentang Saya</h2>
-                    <p class="section-desc">
-                        Informasi lengkap mengenai latar belakang pendidikan, kompetensi inti, dan motivasi profesional saya di dunia teknologi informasi.
+    <!-- ==========================================
+         MAIN CONTENT AREA (SEMANTIC <main>)
+         ========================================== -->
+    <main>
+
+        <!-- 1. BAGIAN BERANDA (HERO SECTION) -->
+        <section id="beranda" class="hero-section d-flex align-items-center min-vh-100">
+            <div class="container">
+                <div class="row align-items-center gy-5">
+                    
+                    <!-- Text Content (Kiri) -->
+                    <div class="col-12 col-lg-7 text-center text-lg-start">
+                        <div class="section-tag font-mono">
+                            <i class="bi bi-terminal me-1"></i> SYSTEM_ONLINE // ETHICAL_HACKER
+                        </div>
+                        
+                        <h1 class="display-4 fw-bold text-white mb-2">
+                            Muhammad <span class="text-cyan">Jawsyan</span>
+                        </h1>
+                        
+                        <p class="lead text-secondary mb-3">
+                            Mahasiswa <strong class="text-white">Teknik Informatika Universitas Paramadina</strong> | 
+                            <span class="text-cyan fw-semibold">Offensive Security</span>, 
+                            <span class="text-white fw-semibold">Vulnerability Disclosure</span> & 
+                            <span class="text-cyan fw-semibold">AI Engineering</span>
+                        </p>
+                        
+                        <p class="text-muted mb-4 pe-lg-4" style="font-size: 0.95rem;">
+                            Berdedikasi dalam memperkuat ketahanan infrastruktur siber melalui riset kerentanan etis yang diakui resmi oleh 
+                            <strong>PUSSIBER TNI AD (Kartika CSIRT)</strong> dan <strong>BSSA Pemprov DKI Jakarta</strong>, serta pemenang 
+                            <strong>Juara 4 Capture The Flag (CTF) Zero Day 2026</strong>.
+                        </p>
+                        
+                        <!-- CTA Buttons (Responsive 375px Friendly) -->
+                        <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start mb-4 btn-group-responsive">
+                            <a href="#proyek" class="btn btn-primary px-4 py-2">
+                                <i class="bi bi-grid-3x3-gap me-1"></i> Lihat Proyek Unggulan
+                            </a>
+                            <a href="#prestasi" class="btn btn-outline-primary px-4 py-2">
+                                <i class="bi bi-award me-1"></i> Rekap Sertifikasi Resmi
+                            </a>
+                        </div>
+                        
+                        <!-- Social Media Links -->
+                        <div class="d-flex gap-3 justify-content-center justify-content-lg-start align-items-center">
+                            <span class="text-muted small">Jejaring Resmi:</span>
+                            <a href="https://www.linkedin.com/in/muhammadjawsyan/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary rounded-circle" title="LinkedIn">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/j12k14a" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary rounded-circle" title="GitHub">
+                                <i class="bi bi-github"></i>
+                            </a>
+                            <a href="https://scriptkiddieoflinux.blogspot.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary rounded-circle" title="Blog Pengetahuan">
+                                <i class="bi bi-globe"></i>
+                            </a>
+                            <a href="mailto:muhammad.jawsyan@paramadina.ac.id" class="btn btn-sm btn-outline-secondary rounded-circle" title="Email Kampus">
+                                <i class="bi bi-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Avatar Portrait (Kanan) -->
+                    <div class="col-12 col-lg-5 text-center">
+                        <div class="hero-avatar-wrapper">
+                            <img src="assets/img/profile.jpg" alt="Foto Profil Muhammad Jawsyan" class="hero-avatar">
+                            
+                            <!-- Badges Desktop -->
+                            <div class="floating-badge badge-top-right d-none d-lg-inline-flex">
+                                <i class="bi bi-shield-check text-warning"></i>
+                                <span>Apresiasi PUSSIBER TNI AD</span>
+                            </div>
+                            <div class="floating-badge badge-bottom-left d-none d-lg-inline-flex">
+                                <i class="bi bi-trophy text-cyan"></i>
+                                <span>Juara 4 CTF Zero Day</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Badges Mobile Fallback (375px) -->
+                        <div class="hero-badges-container d-lg-none mt-3">
+                            <span class="floating-badge">
+                                <i class="bi bi-shield-check text-warning"></i> Apresiasi PUSSIBER TNI AD
+                            </span>
+                            <span class="floating-badge">
+                                <i class="bi bi-patch-check text-cyan"></i> BSSA DKI Jakarta
+                            </span>
+                            <span class="floating-badge">
+                                <i class="bi bi-trophy text-warning"></i> Juara 4 CTF Zero Day
+                            </span>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. BAGIAN TENTANG SAYA (ABOUT ME) -->
+        <section id="tentang" class="py-5">
+            <div class="container">
+                
+                <header class="text-center mb-5">
+                    <span class="section-tag"><i class="bi bi-person-badge me-1"></i> TENTANG SAYA</span>
+                    <h2 class="section-title">Profil & Rekam Jejak</h2>
+                    <p class="section-desc mx-auto">
+                        Dedikasi akademis dan profesional dalam ranah teknologi informasi, keamanan siber pertahanan, serta rekayasa kecerdasan buatan cerdas.
                     </p>
                 </header>
+                
+                <!-- Highlight Predikat Apresiasi Khusus -->
+                <div class="row g-4 mb-5">
+                    <div class="col-12 col-md-6">
+                        <article class="custom-card card-gold p-4 h-100">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <span class="badge bg-warning text-dark fw-bold"><i class="bi bi-shield-fill-check me-1"></i> INSTANSI PERTAHANAN</span>
+                                <small class="text-warning font-mono">03 September 2026</small>
+                            </div>
+                            <h4 class="text-white mb-2">PUSSIBER TNI ANGKATAN DARAT</h4>
+                            <p class="text-muted small mb-3">
+                                <strong>Nomor:</strong> <code>SERT/36/PUSSIBERAD/KARTIKA-CSIRT/IX/2026</code><br>
+                                Diberikan oleh Dansatlak Penangkalan Siber Pussiberad (Kartika CSIRT) atas kerja sama koordinasi temuan kerentanan serta bertindak secara etis dengan melaporkannya.
+                            </p>
+                            <a href="assets/img/cert_pussiber_tni_ad.png" target="_blank" class="btn btn-sm btn-outline-warning">
+                                <i class="bi bi-zoom-in me-1"></i> Buka Piagam Apresiasi
+                            </a>
+                        </article>
+                    </div>
+                    
+                    <div class="col-12 col-md-6">
+                        <article class="custom-card card-cyan p-4 h-100">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <span class="badge bg-info text-dark fw-bold"><i class="bi bi-building-check me-1"></i> PEMERINTAH PROVINSI</span>
+                                <small class="text-cyan font-mono">20 Agustus 2026</small>
+                            </div>
+                            <h4 class="text-white mb-2">BSSA DISKOMINFOTIK PROVINSI DKI JAKARTA</h4>
+                            <p class="text-muted small mb-3">
+                                <strong>Nomor:</strong> <code>113/BUG/BSSA/VIII/2026</code><br>
+                                Apresiasi resmi dari Badan Siber Sandi dan Aplikasi Provinsi DKI Jakarta atas kepedulian dan kontribusi dalam menemukan serta melaporkan kerentanan pada sistem elektronik pemerintah.
+                            </p>
+                            <a href="assets/img/cert_bssa_dki_jakarta.png" target="_blank" class="btn btn-sm btn-outline-info">
+                                <i class="bi bi-zoom-in me-1"></i> Buka Piagam Apresiasi
+                            </a>
+                        </article>
+                    </div>
+                </div>
 
-                <article>
-                    <p>
-                        Saya adalah seorang pembelajar yang antusias dan disiplin dengan pengalaman langsung dalam kompetisi keamanan siber, pelatihan penetrasi sistem, serta pengembangan agen AI. Saya memiliki komitmen tinggi terhadap etika keamanan siber (<em>Responsible Disclosure</em>) dalam membantu memperkuat infrastruktur digital nasional.
+                <!-- Detail Biodata & Fokus Keahlian -->
+                <div class="row g-4 align-items-center">
+                    <div class="col-12 col-lg-6">
+                        <div class="custom-card p-4">
+                            <h3 class="h4 text-white mb-3"><i class="bi bi-mortarboard text-cyan me-2"></i> Latar Belakang Akademik</h3>
+                            <p class="text-secondary small">
+                                Saya adalah mahasiswa aktif Program Studi <strong>S1 Teknik Informatika di Universitas Paramadina</strong>, Jakarta. 
+                                Memiliki komitmen tinggi terhadap etika keamanan siber (<em>Responsible Vulnerability Disclosure</em>) serta aktif mengikuti kompetisi hacking nasional dan riset AI.
+                            </p>
+                            
+                            <ul class="list-unstyled mb-0 d-flex flex-column gap-2 small">
+                                <li class="d-flex justify-content-between border-bottom pb-2 border-secondary border-opacity-25">
+                                    <span class="text-muted"><i class="bi bi-person me-2"></i> Nama Lengkap:</span>
+                                    <span class="text-white fw-semibold">Muhammad Jawsyan</span>
+                                </li>
+                                <li class="d-flex justify-content-between border-bottom pb-2 border-secondary border-opacity-25">
+                                    <span class="text-muted"><i class="bi bi-book me-2"></i> Program Studi:</span>
+                                    <span class="text-white fw-semibold">S1 Teknik Informatika (Fakultas Ilmu Rekayasa)</span>
+                                </li>
+                                <li class="d-flex justify-content-between border-bottom pb-2 border-secondary border-opacity-25">
+                                    <span class="text-muted"><i class="bi bi-geo-alt me-2"></i> Kampus:</span>
+                                    <span class="text-white fw-semibold">Universitas Paramadina, Jakarta Selatan</span>
+                                </li>
+                                <li class="d-flex justify-content-between border-bottom pb-2 border-secondary border-opacity-25">
+                                    <span class="text-muted"><i class="bi bi-award me-2"></i> Prestasi Utama:</span>
+                                    <span class="text-cyan fw-semibold">Juara 4 CTF Zero Day 2026 & Dua Apresiasi Resmi</span>
+                                </li>
+                                <li class="d-flex justify-content-between">
+                                    <span class="text-muted"><i class="bi bi-code me-2"></i> Bahasa & Stack:</span>
+                                    <span class="text-white fw-semibold">HTML5, CSS3, Bootstrap 5, Python, Bash</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 col-lg-6">
+                        <div class="custom-card p-4">
+                            <h3 class="h4 text-white mb-3"><i class="bi bi-speedometer2 text-cyan me-2"></i> Tingkat Penguasaan Kompetensi</h3>
+                            
+                            <!-- Skill 1 -->
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between small mb-1">
+                                    <span class="text-white">Offensive Security & Vulnerability Reporting</span>
+                                    <span class="text-cyan fw-bold">92%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 92%;" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Skill 2 -->
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between small mb-1">
+                                    <span class="text-white">Capture The Flag (CTF) Web Exploitation</span>
+                                    <span class="text-cyan fw-bold">88%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 88%;" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Skill 3 -->
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between small mb-1">
+                                    <span class="text-white">AI Agent Engineering (ADK & Python)</span>
+                                    <span class="text-cyan fw-bold">85%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Skill 4 -->
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between small mb-1">
+                                    <span class="text-white">Responsive Web Development (Bootstrap 5 & HTML5)</span>
+                                    <span class="text-cyan fw-bold">90%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Skill 5 -->
+                            <div>
+                                <div class="d-flex justify-content-between small mb-1">
+                                    <span class="text-white">Ransomware Defense (EU Cyber Academy CRPO)</span>
+                                    <span class="text-cyan fw-bold">90%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- 3. BAGIAN PROYEK (PROJECTS - MINIMAL 3 ITEM SESUAI KETENTUAN) -->
+        <section id="proyek" class="py-5 bg-darker">
+            <div class="container">
+                
+                <header class="text-center mb-5">
+                    <span class="section-tag"><i class="bi bi-briefcase me-1"></i> SHOWCASE KARYA</span>
+                    <h2 class="section-title">Portofolio Proyek (Minimal 3 Item)</h2>
+                    <p class="section-desc mx-auto">
+                        Koleksi implementasi nyata proyek perangkat lunak, automasi kecerdasan buatan, dan piranti pengujian keamanan siber.
                     </p>
+                </header>
+                
+                <div class="row g-4">
+                    
+                    <!-- PROYEK 1: Fufufafa AI Agent -->
+                    <div class="col-12 col-md-6 col-lg-6">
+                        <article class="custom-card p-4 project-card">
+                            <div>
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <div class="project-icon-box">
+                                        <i class="bi bi-robot"></i>
+                                    </div>
+                                    <span class="badge bg-primary text-dark fw-bold">AI & Security</span>
+                                </div>
+                                
+                                <h3 class="h4 text-white mb-2">Fufufafa AI Agent (Autonomous Bug Hunter)</h3>
+                                
+                                <p class="text-secondary small mb-3">
+                                    Agen kecerdasan buatan otonom yang dikembangkan untuk membantu audit keamanan sistem secara otomatis. 
+                                    Mampu menjalankan reconnaissance permukaan web, identifikasi miskonfigurasi, serta menyusun simulasi validasi celah keamanan secara terukur.
+                                </p>
+                                
+                                <div class="mb-3">
+                                    <strong class="d-block text-white small mb-2"><i class="bi bi-check-circle-fill text-cyan me-1"></i> Fitur Utama:</strong>
+                                    <ul class="text-muted small ps-3 mb-0">
+                                        <li>Automated Endpoint & Directory Surface Mapping</li>
+                                        <li>CWE/CVE Vulnerability Scoring & Classification</li>
+                                        <li>Proof of Concept (PoC) Safe Reporting Generator</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="mb-3">
+                                    <span class="tech-tag">Python 3</span>
+                                    <span class="tech-tag">Google Gemini API</span>
+                                    <span class="tech-tag">Agent Development Kit (ADK)</span>
+                                    <span class="tech-tag">Bash Automation</span>
+                                </div>
+                                <a href="https://github.com/j12k14a" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary w-100">
+                                    <i class="bi bi-github me-1"></i> Lihat Repositori GitHub
+                                </a>
+                            </div>
+                        </article>
+                    </div>
 
-                    <!-- TABEL BIODATA (Elemen Table yang Diwajibkan) -->
-                    <div class="biodata-table-wrapper">
-                        <table class="biodata-table">
-                            <caption>Tabel Data Personal & Akademik</caption>
+                    <!-- PROYEK 2: CTF Offensive Toolkit -->
+                    <div class="col-12 col-md-6 col-lg-6">
+                        <article class="custom-card p-4 project-card">
+                            <div>
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <div class="project-icon-box">
+                                        <i class="bi bi-flag-fill"></i>
+                                    </div>
+                                    <span class="badge bg-warning text-dark fw-bold">Juara 4 Nasional</span>
+                                </div>
+                                
+                                <h3 class="h4 text-white mb-2">CTF Offensive Toolkit & Exploit Solver</h3>
+                                
+                                <p class="text-secondary small mb-3">
+                                    Kumpulan toolkit eksploitasi modular dan skrip pemecah tantangan kompetisi Capture The Flag (CTF) 
+                                    yang berhasil mengantarkan tim meraih predikat <strong>4th Place Scholar Battle Winner di ajang ZERO DAY 2026</strong>.
+                                </p>
+                                
+                                <div class="mb-3">
+                                    <strong class="d-block text-white small mb-2"><i class="bi bi-check-circle-fill text-cyan me-1"></i> Fitur Utama:</strong>
+                                    <ul class="text-muted small ps-3 mb-0">
+                                        <li>Custom Cryptography Decoders (RSA, AES, Custom XOR)</li>
+                                        <li>Web Exploitation Helper (IDOR, SQLi, SSTI Payload Injector)</li>
+                                        <li>Memory Dump & Network Traffic Forensics Analyzer</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="mb-3">
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">Kali Linux</span>
+                                    <span class="tech-tag">Burp Suite</span>
+                                    <span class="tech-tag">Wireshark</span>
+                                    <span class="tech-tag">Cryptool</span>
+                                </div>
+                                <a href="#prestasi" class="btn btn-sm btn-outline-warning w-100">
+                                    <i class="bi bi-award me-1"></i> Lihat Piagam Kejuaraan
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- PROYEK 3: ADK UAS Agentic Integration -->
+                    <div class="col-12 col-md-6 col-lg-6">
+                        <article class="custom-card p-4 project-card">
+                            <div>
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <div class="project-icon-box">
+                                        <i class="bi bi-cpu"></i>
+                                    </div>
+                                    <span class="badge bg-info text-dark fw-bold">Academic Project</span>
+                                </div>
+                                
+                                <h3 class="h4 text-white mb-2">ADK UAS (Kreativitas & Inovasi Agentic AI)</h3>
+                                
+                                <p class="text-secondary small mb-3">
+                                    Proyek rekayasa sistem terintegrasi yang menghubungkan berbagai antarmuka Application Programming Interface (API) backend 
+                                    dengan arsitektur agen cerdas untuk otomasi alur kerja dan pengolahan data terstruktur secara asinkron.
+                                </p>
+                                
+                                <div class="mb-3">
+                                    <strong class="d-block text-white small mb-2"><i class="bi bi-check-circle-fill text-cyan me-1"></i> Fitur Utama:</strong>
+                                    <ul class="text-muted small ps-3 mb-0">
+                                        <li>Multi-Agent Communication Protocols</li>
+                                        <li>Asynchronous API Client with Exponential Backoff</li>
+                                        <li>Modular Tool Registry & Dynamic Function Calling</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="mb-3">
+                                    <span class="tech-tag">Python 3.11</span>
+                                    <span class="tech-tag">RESTful API</span>
+                                    <span class="tech-tag">AsyncIO</span>
+                                    <span class="tech-tag">JSON-RPC</span>
+                                </div>
+                                <a href="https://github.com/j12k14a" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary w-100">
+                                    <i class="bi bi-github me-1"></i> Lihat Kode Sumber
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- PROYEK 4: Script Kiddie of Linux -->
+                    <div class="col-12 col-md-6 col-lg-6">
+                        <article class="custom-card p-4 project-card">
+                            <div>
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <div class="project-icon-box">
+                                        <i class="bi bi-journal-code"></i>
+                                    </div>
+                                    <span class="badge bg-success text-dark fw-bold">Community Blog</span>
+                                </div>
+                                
+                                <h3 class="h4 text-white mb-2">Script Kiddie of Linux Knowledge Base</h3>
+                                
+                                <p class="text-secondary small mb-3">
+                                    Portal media edukasi independen yang memuat tulisan teknis, dokumentasi tutorial sistem operasi Linux, 
+                                    analisis serangan siber terkini, dan strategi pertahanan jaringan untuk komunitas mahasiswa dan pegiat siber Indonesia.
+                                </p>
+                                
+                                <div class="mb-3">
+                                    <strong class="d-block text-white small mb-2"><i class="bi bi-check-circle-fill text-cyan me-1"></i> Fitur Utama:</strong>
+                                    <ul class="text-muted small ps-3 mb-0">
+                                        <li>50+ Artikel Teknis Linux Administration & Hardening</li>
+                                        <li>Panduan Dasar Ethical Hacking & Reverse Engineering</li>
+                                        <li>Pembahasan Writeup Tantangan Capture The Flag (CTF)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="mb-3">
+                                    <span class="tech-tag">Technical Writing</span>
+                                    <span class="tech-tag">Cyber Knowledge</span>
+                                    <span class="tech-tag">Linux Administration</span>
+                                    <span class="tech-tag">Blogger CMS</span>
+                                </div>
+                                <a href="https://scriptkiddieoflinux.blogspot.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-success w-100">
+                                    <i class="bi bi-box-arrow-up-right me-1"></i> Kunjungi Blog Edukasi
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. BAGIAN PRESTASI & SERTIFIKASI (ACHIEVEMENTS) -->
+        <section id="prestasi" class="py-5">
+            <div class="container">
+                
+                <header class="text-center mb-5">
+                    <span class="section-tag"><i class="bi bi-patch-check me-1"></i> DOKUMEN RESMI</span>
+                    <h2 class="section-title">Prestasi & Rekapitulasi Sertifikasi</h2>
+                    <p class="section-desc mx-auto">
+                        Tabel rekapitulasi data piagam penghargaan dan lisensi kompetensi yang terverifikasi secara sah.
+                    </p>
+                </header>
+                
+                <!-- Tabel Rekapitulasi Bootstrap 5 -->
+                <div class="custom-card p-3 p-md-4 mb-5">
+                    <div class="table-responsive">
+                        <table class="table custom-table table-hover align-middle mb-0 text-nowrap">
+                            <caption class="text-muted small px-2">Rekapitulasi 12 Dokumen Prestasi & Lisensi Resmi Muhammad Jawsyan</caption>
                             <thead>
                                 <tr>
-                                    <th>Parameter</th>
-                                    <th>Keterangan Lengkap</th>
+                                    <th>No</th>
+                                    <th>Tanggal</th>
+                                    <th>Nama Prestasi / Sertifikasi</th>
+                                    <th>Penyelenggara / Instansi</th>
+                                    <th>No. Registrasi Dokumen</th>
+                                    <th>Status Verifikasi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th>Nama Lengkap</th>
-                                    <td>Muhammad Jawsyan</td>
+                                <!-- 1. Diskominfo Bandung (Oktober 2026) -->
+                                <tr class="table-active">
+                                    <td class="fw-bold">01</td>
+                                    <td>06 Okt 2026</td>
+                                    <td>
+                                        <strong class="text-white">Sertifikat Apresiasi: Temuan Kerentanan Sistem</strong><br>
+                                        <small class="text-cyan"><i class="bi bi-star-fill me-1"></i> Pemda Kota Bandung</small>
+                                    </td>
+                                    <td>DISKOMINFO Kota Bandung</td>
+                                    <td><code>0105/KS.02.23/2026/DISKOMINFO</code></td>
+                                    <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i> Terverifikasi Sah</span></td>
                                 </tr>
-                                <tr>
-                                    <th>Program Studi</th>
-                                    <td>S1 Teknik Informatika (Fakultas Ilmu Rekayasa)</td>
+                                
+                                <!-- 2. PUSSIBER TNI AD (September 2026) -->
+                                <tr class="table-warning bg-opacity-10">
+                                    <td class="fw-bold">02</td>
+                                    <td>03 Sep 2026</td>
+                                    <td>
+                                        <strong class="text-white">Sertifikat Apresiasi: Temuan Kerentanan & Pelaporan Etis</strong><br>
+                                        <small class="text-warning"><i class="bi bi-star-fill me-1"></i> Predikat Khusus Siber Militer</small>
+                                    </td>
+                                    <td>PUSSIBER TNI AD (Kartika CSIRT)</td>
+                                    <td><code>SERT/36/PUSSIBERAD/KARTIKA-CSIRT/IX/2026</code></td>
+                                    <td><span class="badge bg-warning text-dark"><i class="bi bi-shield-fill-check me-1"></i> Dokumen Sah</span></td>
                                 </tr>
-                                <tr>
-                                    <th>Perguruan Tinggi</th>
-                                    <td>Universitas Paramadina, Jakarta</td>
+                                
+                                <!-- 3. BSSA DKI Jakarta (Agustus 2026) -->
+                                <tr class="table-info bg-opacity-10">
+                                    <td class="fw-bold">03</td>
+                                    <td>20 Agu 2026</td>
+                                    <td>
+                                        <strong class="text-white">Sertifikat Apresiasi: Pelaporan Vulnerability Sistem Elektronik</strong><br>
+                                        <small class="text-cyan"><i class="bi bi-star-fill me-1"></i> Predikat Khusus Pemprov DKI</small>
+                                    </td>
+                                    <td>BSSA Diskominfotik Pemprov DKI Jakarta</td>
+                                    <td><code>113/BUG/BSSA/VIII/2026</code></td>
+                                    <td><span class="badge bg-info text-dark"><i class="bi bi-patch-check-fill me-1"></i> Dokumen Sah</span></td>
                                 </tr>
+                                
+                                <!-- 4. Zero Day CTF (Juni 2026) -->
                                 <tr>
-                                    <th>Mata Kuliah Terkait</th>
-                                    <td>Pemrograman Web (Kelas A) - Dosen: Rahmad Syalevi, S. Kom., M.T.I</td>
+                                    <td class="fw-bold">04</td>
+                                    <td>28 Jun 2026</td>
+                                    <td>
+                                        <strong class="text-white">Juara 4 - 4th Place Scholar Battle Winner</strong><br>
+                                        <small class="text-muted">Capture The Flag (CTF) Competition - ZERO DAY</small>
+                                    </td>
+                                    <td>DSG & Fakultas Ilmu Komputer</td>
+                                    <td><code>ZD-2026-CHAMP-04</code></td>
+                                    <td><span class="badge bg-primary">Juara 4 Nasional</span></td>
                                 </tr>
+                                
+                                <!-- 5. SEVIMA CTI (Juni 2026) -->
                                 <tr>
-                                    <th>Bidang Peminatan</th>
-                                    <td>Cybersecurity, Red Team Operations, Artificial Intelligence, Web Development</td>
+                                    <td class="fw-bold">05</td>
+                                    <td>29 Jun 2026</td>
+                                    <td>SEVIMA Cyber Threat Intelligence sebagai Core Intel IT</td>
+                                    <td>PT Sentra Vidya Utama (SEVIMA)</td>
+                                    <td><code>1000/SRTFK/SVM/VI/2026</code></td>
+                                    <td><span class="badge bg-secondary">Lulus Pelatihan</span></td>
                                 </tr>
+                                
+                                <!-- 6. SEVIMA AI Disruptions (Juni 2026) -->
                                 <tr>
-                                    <th>Status Pelaporan Etis</th>
-                                    <td><span style="color: var(--accent-green); font-weight: bold;">● Diakui Resmi oleh PUSSIBER TNI AD & BSSA DKI Jakarta</span></td>
+                                    <td class="fw-bold">06</td>
+                                    <td>22 Jun 2026</td>
+                                    <td>SEVIMA Security Challenge: AI Disruptions on Cyber Security</td>
+                                    <td>PT Sentra Vidya Utama (SEVIMA)</td>
+                                    <td><code>994/SRTFK/SVM/VI/2026</code></td>
+                                    <td><span class="badge bg-secondary">Lulus Pelatihan</span></td>
                                 </tr>
+                                
+                                <!-- 7. SEVIMA 10 JP (Juni 2026) -->
                                 <tr>
-                                    <th>Bahasa Pemrograman</th>
-                                    <td>HTML5, CSS3, Python, C++, Bash Scripting</td>
+                                    <td class="fw-bold">07</td>
+                                    <td>15 Jun 2026</td>
+                                    <td>SEVIMA Security Challenge 2026 (10 JP, Online MOOC)</td>
+                                    <td>PT Sentra Vidya Utama (SEVIMA)</td>
+                                    <td><code>903/SRTFK/SVM/VI/2026</code></td>
+                                    <td><span class="badge bg-secondary">10 JP Selesai</span></td>
+                                </tr>
+                                
+                                <!-- 8. Hackviser (Juni 2024) -->
+                                <tr>
+                                    <td class="fw-bold">08</td>
+                                    <td>19 Jun 2024</td>
+                                    <td>CORE Cybersecurity Foundations</td>
+                                    <td>Hackviser Academy</td>
+                                    <td><code>HV-CORE-CERT-2024</code></td>
+                                    <td><span class="badge bg-secondary">Certified</span></td>
+                                </tr>
+                                
+                                <!-- 9. CRPO EU Cyber Academy (2024) -->
+                                <tr>
+                                    <td class="fw-bold">09</td>
+                                    <td>2024</td>
+                                    <td>Certified Ransomware Protection Officer (CRPO)</td>
+                                    <td>European Cyber Academy</td>
+                                    <td><code>CRPO-EU-CERT-64D6</code></td>
+                                    <td><span class="badge bg-secondary">Certified</span></td>
+                                </tr>
+                                
+                                <!-- 10. Microsoft AI (Januari 2024) -->
+                                <tr>
+                                    <td class="fw-bold">10</td>
+                                    <td>31 Jan 2024</td>
+                                    <td>Generative AI for Youth Training</td>
+                                    <td>Microsoft AI Skills</td>
+                                    <td><code>MS-GENAI-2024-ID</code></td>
+                                    <td><span class="badge bg-secondary">Certified</span></td>
+                                </tr>
+                                
+                                <!-- 11. Cisco (Januari 2024) -->
+                                <tr>
+                                    <td class="fw-bold">11</td>
+                                    <td>21 Jan 2024</td>
+                                    <td>Introduction to Cybersecurity Course Completion</td>
+                                    <td>Cisco Networking Academy</td>
+                                    <td><code>CISCO-NETACAD-INTRO</code></td>
+                                    <td><span class="badge bg-secondary">Completed</span></td>
+                                </tr>
+                                
+                                <!-- 12. Merdeka Siber (Januari 2024) -->
+                                <tr>
+                                    <td class="fw-bold">12</td>
+                                    <td>20 Jan 2024</td>
+                                    <td>Bootcamp Online Cyber Security Beginner Batch 1</td>
+                                    <td>Merdeka Siber Academy</td>
+                                    <td><code>MS/BOCSE/COE/24/2026/011</code></td>
+                                    <td><span class="badge bg-secondary">Lulus Predikat Baik</span></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                </article>
-            </section>
+                </div>
+                
+                <!-- Galeri Kartu Visual Teratas (4 Dokumen Unggulan) -->
+                <div class="row g-4">
+                    <!-- 1. Diskominfo Bandung (Oktober 2026) -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <article class="custom-card h-100 overflow-hidden d-flex flex-column justify-content-between">
+                            <div>
+                                <img src="assets/img/cert_diskominfo_bandung.png" alt="Sertifikat Diskominfo Kota Bandung" class="img-fluid w-100" style="height: 180px; object-fit: cover;">
+                                <div class="p-3">
+                                    <span class="badge bg-success mb-2">Diskominfo Bandung</span>
+                                    <h5 class="text-white h6 mb-1">Apresiasi Kerentanan Sistem</h5>
+                                    <p class="text-muted small mb-0">No: 0105/KS.02.23/2026</p>
+                                </div>
+                            </div>
+                            <div class="p-3 pt-0">
+                                <a href="assets/img/cert_diskominfo_bandung.png" target="_blank" class="btn btn-sm btn-outline-primary w-100">
+                                    <i class="bi bi-eye me-1"></i> Buka Resolusi Penuh
+                                </a>
+                            </div>
+                        </article>
+                    </div>
 
-            <!-- Dokumentasi Foto Kegiatan (Elemen Image & Figure) -->
-            <section class="card">
-                <header class="section-header">
-                    <span class="section-tag">DOKUMENTASI EVENT</span>
-                    <h2 class="section-title">Dokumentasi Aktivitas Lapangan</h2>
-                    <p class="section-desc">
-                        Dokumentasi keikutsertaan dalam kompetisi siber nasional Capture The Flag (CTF) - ZERO DAY 2026.
+                    <!-- 2. PUSSIBER TNI AD (September 2026) -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <article class="custom-card h-100 overflow-hidden d-flex flex-column justify-content-between">
+                            <div>
+                                <img src="assets/img/cert_pussiber_tni_ad.png" alt="Sertifikat PUSSIBER TNI AD" class="img-fluid w-100" style="height: 180px; object-fit: cover;">
+                                <div class="p-3">
+                                    <span class="badge bg-warning text-dark mb-2">TNI AD Kartika CSIRT</span>
+                                    <h5 class="text-white h6 mb-1">Apresiasi Temuan Kerentanan</h5>
+                                    <p class="text-muted small mb-0">No: SERT/36/PUSSIBERAD/IX/2026</p>
+                                </div>
+                            </div>
+                            <div class="p-3 pt-0">
+                                <a href="assets/img/cert_pussiber_tni_ad.png" target="_blank" class="btn btn-sm btn-outline-primary w-100">
+                                    <i class="bi bi-eye me-1"></i> Buka Resolusi Penuh
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                    
+                    <!-- 3. BSSA DKI Jakarta (Agustus 2026) -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <article class="custom-card h-100 overflow-hidden d-flex flex-column justify-content-between">
+                            <div>
+                                <img src="assets/img/cert_bssa_dki_jakarta.png" alt="Sertifikat BSSA DKI Jakarta" class="img-fluid w-100" style="height: 180px; object-fit: cover;">
+                                <div class="p-3">
+                                    <span class="badge bg-info text-dark mb-2">BSSA Pemprov DKI</span>
+                                    <h5 class="text-white h6 mb-1">Apresiasi Vulnerability Disclosure</h5>
+                                    <p class="text-muted small mb-0">No: 113/BUG/BSSA/VIII/2026</p>
+                                </div>
+                            </div>
+                            <div class="p-3 pt-0">
+                                <a href="assets/img/cert_bssa_dki_jakarta.png" target="_blank" class="btn btn-sm btn-outline-primary w-100">
+                                    <i class="bi bi-eye me-1"></i> Buka Resolusi Penuh
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                    
+                    <!-- 4. CTF Zero Day (Juni 2026) -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <article class="custom-card h-100 overflow-hidden d-flex flex-column justify-content-between">
+                            <div>
+                                <img src="assets/img/cert_zeroday.png" alt="Sertifikat Juara 4 CTF Zero Day" class="img-fluid w-100" style="height: 180px; object-fit: cover;">
+                                <div class="p-3">
+                                    <span class="badge bg-primary mb-2">Juara 4 Nasional</span>
+                                    <h5 class="text-white h6 mb-1">CTF ZERO DAY 2026</h5>
+                                    <p class="text-muted small mb-0">Scholar Battle Champ - DSG</p>
+                                </div>
+                            </div>
+                            <div class="p-3 pt-0">
+                                <a href="assets/img/cert_zeroday.png" target="_blank" class="btn btn-sm btn-outline-primary w-100">
+                                    <i class="bi bi-eye me-1"></i> Buka Resolusi Penuh
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 5. BAGIAN KONTAK (CONTACT) -->
+        <section id="kontak" class="py-5 bg-darker">
+            <div class="container">
+                
+                <header class="text-center mb-5">
+                    <span class="section-tag"><i class="bi bi-chat-dots me-1"></i> HUBUNGI SAYA</span>
+                    <h2 class="section-title">Inisialisasi Komunikasi & Kolaborasi</h2>
+                    <p class="section-desc mx-auto">
+                        Terbuka untuk diskusi mengenai riset keamanan siber etis, pengembangan agen AI, koordinasi tim CTF, maupun keperluan akademik.
                     </p>
                 </header>
-
-                <div class="event-grid">
-                    <figure class="event-figure">
-                        <img src="assets/img/event/photo1.jpg" alt="Presentasi dan Diskusi Teknis Zero Day 2026">
-                        <figcaption class="event-caption">Sesi Diskusi & Presentasi Teknis CTF</figcaption>
-                    </figure>
-                    <figure class="event-figure">
-                        <img src="assets/img/event/photo2.jpg" alt="Pemaparan Solusi Keamanan Siber Zero Day">
-                        <figcaption class="event-caption">Pemaparan Solusi Keamanan Siber</figcaption>
-                    </figure>
-                    <figure class="event-figure">
-                        <img src="assets/img/event/photo3.jpg" alt="Dokumentasi di Backdrop ZERO DAY 2026">
-                        <figcaption class="event-caption">Stand Banner ZERO DAY 2026 (Juara 4)</figcaption>
-                    </figure>
+                
+                <div class="row g-4 justify-content-center">
+                    
+                    <!-- Informasi Kontak Langsung (Kiri) -->
+                    <div class="col-12 col-lg-5">
+                        <aside class="custom-card card-cyan p-4 h-100">
+                            <h3 class="h4 text-white mb-3">Saluran Kontak Resmi</h3>
+                            <p class="text-secondary small mb-4">
+                                Silakan hubungi langsung melalui media kontak resmi di bawah ini:
+                            </p>
+                            
+                            <div class="d-flex flex-column gap-3 mb-4">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="project-icon-box mb-0 flex-shrink-0" style="width: 42px; height: 42px; font-size: 1.15rem;">
+                                        <i class="bi bi-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <small class="text-muted d-block">Email Resmi Kampus:</small>
+                                        <a href="mailto:muhammad.jawsyan@paramadina.ac.id" class="text-white text-decoration-none fw-semibold small">
+                                            muhammad.jawsyan@paramadina.ac.id
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="project-icon-box mb-0 flex-shrink-0" style="width: 42px; height: 42px; font-size: 1.15rem;">
+                                        <i class="bi bi-whatsapp"></i>
+                                    </div>
+                                    <div>
+                                        <small class="text-muted d-block">WhatsApp Langsung:</small>
+                                        <a href="https://wa.me/628111541514" target="_blank" rel="noopener noreferrer" class="text-white text-decoration-none fw-semibold small">
+                                            +62 811-1541-514
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="project-icon-box mb-0 flex-shrink-0" style="width: 42px; height: 42px; font-size: 1.15rem;">
+                                        <i class="bi bi-geo-alt"></i>
+                                    </div>
+                                    <div>
+                                        <small class="text-muted d-block">Afiliasi Kampus:</small>
+                                        <span class="text-white fw-semibold small">Universitas Paramadina, Jakarta Selatan</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="project-icon-box mb-0 flex-shrink-0" style="width: 42px; height: 42px; font-size: 1.15rem;">
+                                        <i class="bi bi-globe"></i>
+                                    </div>
+                                    <div>
+                                        <small class="text-muted d-block">Blog Edukasi Siber:</small>
+                                        <a href="https://scriptkiddieoflinux.blogspot.com" target="_blank" rel="noopener noreferrer" class="text-white text-decoration-none fw-semibold small">
+                                            scriptkiddieoflinux.blogspot.com
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- SLA Response Table -->
+                            <div class="border-top border-secondary border-opacity-25 pt-3">
+                                <h4 class="h6 text-cyan mb-2"><i class="bi bi-clock-history me-1"></i> Estimasi Respons Komunikasi:</h4>
+                                <table class="table table-sm table-bordered custom-table small mb-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-muted">Pelaporan Kerentanan / CSIRT</td>
+                                            <td class="text-success fw-bold text-end">Prioritas (&lt; 12 Jam)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-muted">Koordinasi Akademik & Proyek</td>
+                                            <td class="text-white text-end">1 x 24 Jam</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </aside>
+                    </div>
+                    
+                    <!-- Formulir Kontak Bootstrap 5 Responsif (Kanan) -->
+                    <div class="col-12 col-lg-7">
+                        <div class="custom-card p-4 h-100">
+                            <h3 class="h4 text-white mb-2">Formulir Pesan Interaktif</h3>
+                            <p class="text-secondary small mb-4">
+                                Silakan tinggalkan pesan melalui formulir responsif berbasis Bootstrap 5 di bawah ini:
+                            </p>
+                            
+                            <form action="#" method="POST" class="needs-validation">
+                                <div class="row g-3">
+                                    
+                                    <!-- Input Nama -->
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="contactNama" placeholder="Nama Lengkap" required>
+                                            <label for="contactNama">Nama Lengkap *</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Input Email -->
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-floating">
+                                            <input type="email" class="form-control" id="contactEmail" placeholder="nama@email.com" required>
+                                            <label for="contactEmail">Alamat Email *</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Input Subjek -->
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="contactSubject" placeholder="Subjek Pesan" required>
+                                            <label for="contactSubject">Subjek / Topik Diskusi *</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Textarea Pesan -->
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <textarea class="form-control" placeholder="Pesan Anda" id="contactMessage" style="height: 130px;" required></textarea>
+                                            <label for="contactMessage">Isi Pesan atau Agenda Kolaborasi *</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Checkbox Etis -->
+                                    <div class="col-12">
+                                        <div class="form-check small text-muted">
+                                            <input class="form-check-input" type="checkbox" id="checkEtika" required>
+                                            <label class="form-check-label" for="checkEtika">
+                                                Saya menyetujui pengiriman pesan ini untuk koordinasi yang etis dan bermanfaat.
+                                            </label>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Submit & Reset Buttons -->
+                                    <div class="col-12 d-flex gap-2 btn-group-responsive">
+                                        <button type="submit" class="btn btn-primary px-4 py-2 flex-grow-1">
+                                            <i class="bi bi-send-fill me-1"></i> Kirim Pesan Sekarang
+                                        </button>
+                                        <button type="reset" class="btn btn-outline-secondary px-3 py-2">
+                                            <i class="bi bi-arrow-counterclockwise me-1"></i> Reset
+                                        </button>
+                                    </div>
+                                    
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Link Navigasi Cepat (Elemen Link & List) -->
-            <aside class="card card-accent">
-                <h3 class="card-title">🔗 Jelajahi Halaman Lainnya:</h3>
-                <ul class="list-styled">
-                    <li>
-                        <a href="skills.html" style="font-weight: 600;">Halaman Skills & Experience</a>: 
-                        Menampilkan daftar keahlian teknis, progress bar kemampuan, dan timeline pengalaman terurut.
-                    </li>
-                    <li>
-                        <a href="achievements.html" style="font-weight: 600;">Halaman Achievements & Table</a>: 
-                        Menampilkan tabel data verifikasi sertifikat lengkap serta galeri berkas sertifikasi.
-                    </li>
-                    <li>
-                        <a href="contact.html" style="font-weight: 600;">Halaman Contact Me</a>: 
-                        Menyediakan formulir interaktif pengiriman pesan (Form, Input, Button) serta rincian kontak.
-                    </li>
+    </main>
+
+    <!-- ==========================================
+         SEMANTIC FOOTER
+         ========================================== -->
+    <footer class="py-4 border-top border-secondary border-opacity-25 bg-black">
+        <div class="container text-center">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                <div class="text-start">
+                    <p class="mb-0 text-white fw-semibold small">
+                        &copy; 2026 Muhammad Jawsyan. All rights reserved.
+                    </p>
+                    <p class="mb-0 text-muted small" style="font-size: 0.8rem;">
+                        Tugas Pemrograman Web (Kelas A) - <strong>Universitas Paramadina</strong>
+                    </p>
+                </div>
+                
+                <ul class="nav gap-2">
+                    <li class="nav-item"><a href="#beranda" class="nav-link px-2 text-muted small">Beranda</a></li>
+                    <li class="nav-item"><a href="#tentang" class="nav-link px-2 text-muted small">Tentang Saya</a></li>
+                    <li class="nav-item"><a href="#proyek" class="nav-link px-2 text-muted small">Proyek</a></li>
+                    <li class="nav-item"><a href="#prestasi" class="nav-link px-2 text-muted small">Prestasi</a></li>
+                    <li class="nav-item"><a href="#kontak" class="nav-link px-2 text-muted small">Kontak</a></li>
                 </ul>
-            </aside>
+            </div>
+        </div>
+    </footer>
 
-            <!-- Footer Dokumen HTML5 -->
-            <footer class="site-footer">
-                <ul class="footer-nav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="skills.html">Skills</a></li>
-                    <li><a href="achievements.html">Achievements</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-                <p>&copy; 2026 Muhammad Jawsyan. Dibuat dengan <strong>Pure HTML5 & CSS3</strong> tanpa framework untuk memenuhi Tugas Kuliah Pemrograman Web.</p>
-            </footer>
-
-        </main>
-    </div>
+    <!-- Bootstrap 5.3.3 Bundle with Popper JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
 </html>
