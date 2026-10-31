@@ -24,7 +24,7 @@ Sesuai instruksi pada modul perkuliahan dan portal Edlink:
    - `tbl_skill`        : Daftar keahlian teknis keamanan siber, AI, dan persentase penguasaan.
    - `tbl_portofolio`   : Data katalog proyek (4 item proyek unggulan).
    - `tbl_kontak`       : Saluran komunikasi resmi, tautan WhatsApp, email kampus, blog, dan media sosial.
-   - `tbl_prestasi`     : Rekapitulasi 12 dokumen sertifikasi dan piagam apresiasi resmi.
+   - `tbl_prestasi`     : Rekapitulasi 14 dokumen sertifikasi dan piagam apresiasi resmi (termasuk kategori militer SATSIBER TNI & TNI AD, serta Juara 4 CTF Nasional).
    - `tbl_pesan`        : Penampung kiriman pesan masuk dari formulir kontak via metode `POST`.
 4. **Formulir Interaktif Terkoneksi MySQL:** Formulir kontak pada bagian `#kontak` memproses data pengirim via `$_POST` dan menyimpannya secara otomatis ke tabel `tbl_pesan`.
 
@@ -147,6 +147,7 @@ CREATE TABLE `tbl_prestasi` (
     `badge_class` VARCHAR(50) NOT NULL,
     `gambar_piagam` VARCHAR(255) NOT NULL,
     `is_featured` TINYINT(1) DEFAULT 0,
+    `is_militer` TINYINT(1) DEFAULT 0,
     `urutan` INT DEFAULT 1
 );
 ```

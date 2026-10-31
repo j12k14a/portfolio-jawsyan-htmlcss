@@ -45,10 +45,10 @@ INSERT INTO `tbl_data_pribadi` (
     'Universitas Paramadina',
     'SYSTEM_ONLINE // ETHICAL_HACKER',
     'Offensive Security, Vulnerability Disclosure & AI Engineering',
-    'Mahasiswa Teknik Informatika Universitas Paramadina yang berdedikasi dalam memperkuat ketahanan infrastruktur siber melalui riset kerentanan etis serta eksplorasi sistem otonom berbasis Artificial Intelligence.',
-    'Berdedikasi dalam memperkuat ketahanan infrastruktur siber nasional melalui riset celah keamanan (vulnerability research) secara etis yang telah diakui resmi oleh PUSSIBER TNI AD (Kartika CSIRT), BSSA Diskominfotik Pemprov DKI Jakarta, dan Diskominfo Kota Bandung, serta peraih Juara 4 Nasional Capture The Flag (CTF) Zero Day 2026.',
+    'Mahasiswa Teknik Informatika Universitas Paramadina yang berdedikasi dalam memperkuat ketahanan infrastruktur siber melalui riset kerentanan etis yang diakui resmi oleh SATSIBER Mabes TNI, PUSSIBER TNI AD (Kartika CSIRT), BSSA Pemprov DKI Jakarta, dan CSIRT BMKG, serta pemenang Juara 4 Capture The Flag (CTF) Zero Day 2026.',
+    'Berdedikasi dalam memperkuat ketahanan infrastruktur siber nasional melalui riset celah keamanan (vulnerability research) secara etis yang telah diakui resmi oleh instansi militer pertahanan SATSIBER Mabes TNI, PUSSIBER TNI AD (Kartika CSIRT), instansi pemerintah BSSA DKI Jakarta, CSIRT BMKG, dan Diskominfo Kota Bandung, serta peraih Juara 4 Nasional Capture The Flag (CTF) Zero Day 2026.',
     'assets/img/profile.jpg',
-    'Apresiasi PUSSIBER TNI AD',
+    'Apresiasi SATSIBER TNI & TNI AD',
     'Juara 4 CTF Zero Day'
 );
 
@@ -162,23 +162,26 @@ CREATE TABLE `tbl_prestasi` (
     `status_verifikasi` VARCHAR(100) NOT NULL,
     `badge_class` VARCHAR(50) NOT NULL,
     `gambar_piagam` VARCHAR(255) NOT NULL,
+    `is_militer` TINYINT(1) DEFAULT 0,
     `is_featured` TINYINT(1) DEFAULT 0,
     `urutan` INT DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `tbl_prestasi` (`id`, `tanggal`, `tgl_urut`, `judul_prestasi`, `kategori`, `penyelenggara`, `no_registrasi`, `status_verifikasi`, `badge_class`, `gambar_piagam`, `is_featured`, `urutan`) VALUES
-(1, '06 Okt 2026', '2026-10-06', 'Sertifikat Apresiasi: Temuan Kerentanan Sistem', 'Pemda Kota Bandung', 'DISKOMINFO Kota Bandung', '0105/KS.02.23/2026/DISKOMINFO', 'Terverifikasi Sah', 'bg-success', 'assets/img/cert_diskominfo_bandung.png', 1, 1),
-(2, '03 Sep 2026', '2026-09-03', 'Sertifikat Apresiasi: Temuan Kerentanan & Pelaporan Etis', 'Predikat Khusus Siber Militer', 'PUSSIBER TNI AD (Kartika CSIRT)', 'SERT/36/PUSSIBERAD/KARTIKA-CSIRT/IX/2026', 'Dokumen Sah', 'bg-warning text-dark', 'assets/img/cert_pussiber_tni_ad.png', 1, 2),
-(3, '20 Agu 2026', '2026-08-20', 'Sertifikat Apresiasi: Pelaporan Vulnerability Sistem Elektronik', 'Predikat Khusus Pemprov DKI', 'BSSA Diskominfotik Pemprov DKI Jakarta', '113/BUG/BSSA/VIII/2026', 'Dokumen Sah', 'bg-info text-dark', 'assets/img/cert_bssa_dki_jakarta.png', 1, 3),
-(4, '28 Jun 2026', '2026-06-28', 'Juara 4 - 4th Place Scholar Battle Winner', 'Capture The Flag (CTF) Competition - ZERO DAY', 'DSG & Fakultas Ilmu Komputer', 'ZD-2026-CHAMP-04', 'Juara 4 Nasional', 'bg-primary', 'assets/img/cert_zeroday.png', 1, 4),
-(5, '29 Jun 2026', '2026-06-29', 'SEVIMA Cyber Threat Intelligence sebagai Core Intel IT', 'Pelatihan Nasional Keamanan IT', 'PT Sentra Vidya Utama (SEVIMA)', '1000/SRTFK/SVM/VI/2026', 'Lulus Pelatihan', 'bg-secondary', 'assets/img/cert_sevima_cti.jpg', 0, 5),
-(6, '22 Jun 2026', '2026-06-22', 'SEVIMA Security Challenge: AI Disruptions on Cyber Security', 'Workshop Ketahanan Siber & AI', 'PT Sentra Vidya Utama (SEVIMA)', '994/SRTFK/SVM/VI/2026', 'Lulus Pelatihan', 'bg-secondary', 'assets/img/cert_sevima_ai.jpg', 0, 6),
-(7, '22 Jun 2026', '2026-06-22', 'MOOC 10 JP: Cyber Security Awareness & Incident Handling', 'Pelatihan Daring Mandiri Berkelanjutan', 'PT Sentra Vidya Utama (SEVIMA)', '986/SRTFK/SVM/VI/2026', 'Lulus Bersertifikat', 'bg-secondary', 'assets/img/cert_sevima_10jp.jpg', 0, 7),
-(8, '07 Mei 2024', '2024-05-07', 'CRPO: Cyber Resilience Program Officer Course', 'Standar Ketahanan Siber Uni Eropa', 'EU Cyber Academy', 'EU-CRPO-88219', 'Certified', 'bg-secondary', 'assets/img/cert_crpo.png', 0, 8),
-(9, '12 Feb 2024', '2024-02-12', 'Certified Network Security Practitioner (CNSP)', 'Praktisi Keamanan Jaringan Terakreditasi', 'Hackviser Academy', 'HCK-CNSP-2024-90', 'Certified', 'bg-secondary', 'assets/img/cert_hackviser.png', 0, 9),
-(10, '31 Jan 2024', '2024-01-31', 'Generative AI for Youth Training', 'Pelatihan Kecerdasan Buatan Generatif', 'Microsoft AI Skills', 'MS-GENAI-2024-ID', 'Certified', 'bg-secondary', 'assets/img/cert_microsoft_ai.png', 0, 10),
-(11, '21 Jan 2024', '2024-01-21', 'Introduction to Cybersecurity Course Completion', 'Fondasi Fundamental Keamanan Jaringan', 'Cisco Networking Academy', 'CISCO-NETACAD-INTRO', 'Completed', 'bg-secondary', 'assets/img/cert_cisco.png', 0, 11),
-(12, '20 Jan 2024', '2024-01-20', 'Bootcamp Online Cyber Security Beginner Batch 1', 'Pelatihan Intensif Pemula Keamanan Siber', 'Merdeka Siber Academy', 'MS/BOCSE/COE/24/2026/011', 'Lulus Predikat Baik', 'bg-secondary', 'assets/img/cert_merdekasiber.png', 0, 12);
+INSERT INTO `tbl_prestasi` (`id`, `tanggal`, `tgl_urut`, `judul_prestasi`, `kategori`, `penyelenggara`, `no_registrasi`, `status_verifikasi`, `badge_class`, `gambar_piagam`, `is_militer`, `is_featured`, `urutan`) VALUES
+(1, '12 Okt 2026', '2026-10-12', 'Sertifikat Penghargaan: Temuan Celah Kerentanan Sistem Informasi Mabes TNI', 'Siber Militer / Mabes TNI', 'SATSIBER TNI (Mabes TNI)', 'SERT/SSTNI/63/X/2026', 'Dokumen Sah Mabes TNI', 'bg-warning text-dark', 'assets/img/cert_satsiber_tni.png', 1, 1, 1),
+(2, '03 Sep 2026', '2026-09-03', 'Sertifikat Apresiasi: Temuan Kerentanan & Pelaporan Etis', 'Siber Militer / TNI AD', 'PUSSIBER TNI AD (Kartika CSIRT)', 'SERT/36/PUSSIBERAD/KARTIKA-CSIRT/IX/2026', 'Dokumen Sah TNI AD', 'bg-warning text-dark', 'assets/img/cert_pussiber_tni_ad.png', 1, 1, 2),
+(3, '28 Jun 2026', '2026-06-28', 'Juara 4 - 4th Place Scholar Battle Winner', 'Kompetisi Hacking Nasional - ZERO DAY 2026', 'DSG & Fakultas Ilmu Komputer', 'ZD-2026-CHAMP-04', 'Juara 4 Nasional', 'bg-primary', 'assets/img/cert_zeroday.png', 0, 1, 3),
+(4, '05 Okt 2026', '2026-10-05', 'Sertifikat Apresiasi: Koordinasi Temuan Kerentanan & Pelaporan Etis', 'Lembaga Pemerintah Non-Kementerian', 'Badan Meteorologi, Klimatologi, dan Geofisika (CSIRT BMKG)', '146/KI.10.05/CSIRT/BMKG', 'Terverifikasi Sah BSrE', 'bg-info text-dark', 'assets/img/cert_bmkg.png', 0, 1, 4),
+(5, '06 Okt 2026', '2026-10-06', 'Sertifikat Apresiasi: Temuan Kerentanan Sistem', 'Pemerintah Daerah', 'DISKOMINFO Kota Bandung', '0105/KS.02.23/2026/DISKOMINFO', 'Terverifikasi Sah', 'bg-success', 'assets/img/cert_diskominfo_bandung.png', 0, 0, 5),
+(6, '20 Agu 2026', '2026-08-20', 'Sertifikat Apresiasi: Pelaporan Vulnerability Sistem Elektronik', 'Pemerintah Provinsi', 'BSSA Diskominfotik Pemprov DKI Jakarta', '113/BUG/BSSA/VIII/2026', 'Dokumen Sah Pemprov DKI', 'bg-info text-dark', 'assets/img/cert_bssa_dki_jakarta.png', 0, 0, 6),
+(7, '29 Jun 2026', '2026-06-29', 'SEVIMA Cyber Threat Intelligence sebagai Core Intel IT', 'Pelatihan Nasional Keamanan IT', 'PT Sentra Vidya Utama (SEVIMA)', '1000/SRTFK/SVM/VI/2026', 'Lulus Pelatihan', 'bg-secondary', 'assets/img/cert_sevima_cti.jpg', 0, 0, 7),
+(8, '22 Jun 2026', '2026-06-22', 'SEVIMA Security Challenge: AI Disruptions on Cyber Security', 'Workshop Ketahanan Siber & AI', 'PT Sentra Vidya Utama (SEVIMA)', '994/SRTFK/SVM/VI/2026', 'Lulus Pelatihan', 'bg-secondary', 'assets/img/cert_sevima_ai.jpg', 0, 0, 8),
+(9, '15 Jun 2026', '2026-06-22', 'SEVIMA Security Challenge 2026 (10 JP, Online MOOC)', 'Pelatihan Daring Mandiri Berkelanjutan', 'PT Sentra Vidya Utama (SEVIMA)', '903/SRTFK/SVM/VI/2026', '10 JP Selesai', 'bg-secondary', 'assets/img/cert_sevima_10jp.jpg', 0, 0, 9),
+(10, '07 Mei 2024', '2024-05-07', 'CRPO: Cyber Resilience Program Officer Course', 'Standar Ketahanan Siber Uni Eropa', 'EU Cyber Academy', 'EU-CRPO-88219', 'Certified', 'bg-secondary', 'assets/img/cert_crpo.png', 0, 0, 10),
+(11, '12 Feb 2024', '2024-02-12', 'Certified Network Security Practitioner (CNSP)', 'Praktisi Keamanan Jaringan Terakreditasi', 'Hackviser Academy', 'HCK-CNSP-2024-90', 'Certified', 'bg-secondary', 'assets/img/cert_hackviser.png', 0, 0, 11),
+(12, '31 Jan 2024', '2024-01-31', 'Generative AI for Youth Training', 'Pelatihan Kecerdasan Buatan Generatif', 'Microsoft AI Skills', 'MS-GENAI-2024-ID', 'Certified', 'bg-secondary', 'assets/img/cert_microsoft_ai.png', 0, 0, 12),
+(13, '21 Jan 2024', '2024-01-21', 'Introduction to Cybersecurity Course Completion', 'Fondasi Fundamental Keamanan Jaringan', 'Cisco Networking Academy', 'CISCO-NETACAD-INTRO', 'Completed', 'bg-secondary', 'assets/img/cert_cisco.png', 0, 0, 13),
+(14, '20 Jan 2024', '2024-01-20', 'Bootcamp Online Cyber Security Beginner Batch 1', 'Pelatihan Intensif Pemula Keamanan Siber', 'Merdeka Siber Academy', 'MS/BOCSE/COE/24/2026/011', 'Lulus Predikat Baik', 'bg-secondary', 'assets/img/cert_merdekasiber.png', 0, 0, 14);
 
 -- ------------------------------------------------------------------------------
 -- 7. TABEL: tbl_pesan

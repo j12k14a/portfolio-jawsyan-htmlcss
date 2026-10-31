@@ -230,38 +230,84 @@ $data_featured = $stmt_featured->fetchAll();
                     </p>
                 </header>
                 
-                <!-- Highlight Predikat Apresiasi Khusus -->
+                <!-- Highlight Predikat Apresiasi Khusus (Sorotan Militer, CTF Juara 4 & Instansi Resmi) -->
                 <div class="row g-4 mb-5">
-                    <div class="col-12 col-md-6">
-                        <article class="custom-card card-gold p-4 h-100">
-                            <div class="d-flex align-items-center justify-content-between mb-3">
-                                <span class="badge bg-warning text-dark fw-bold"><i class="bi bi-shield-fill-check me-1"></i> INSTANSI PERTAHANAN</span>
-                                <small class="text-warning font-mono">03 September 2026</small>
+                    <!-- 1. SATSIBER TNI (MABES TNI) - KATEGORI MILITER -->
+                    <div class="col-12 col-md-6 col-xl-3">
+                        <article class="custom-card card-gold p-4 h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <span class="badge bg-warning text-dark fw-bold"><i class="bi bi-shield-fill-check me-1"></i> SIBER MILITER</span>
+                                    <small class="text-warning font-mono">12 Okt 2026</small>
+                                </div>
+                                <h4 class="text-white h5 mb-2">SATSIBER TNI (MABES TNI)</h4>
+                                <p class="text-muted small mb-3">
+                                    <strong>Nomor:</strong> <code>SERT/SSTNI/63/X/2026</code><br>
+                                    Piagam Penghargaan resmi dari Dansatsiber TNI (Brigjen TNI J.O. Sembiring) atas temuan celah kerentanan Sistem Informasi Mabes TNI.
+                                </p>
                             </div>
-                            <h4 class="text-white mb-2">PUSSIBER TNI ANGKATAN DARAT</h4>
-                            <p class="text-muted small mb-3">
-                                <strong>Nomor:</strong> <code>SERT/36/PUSSIBERAD/KARTIKA-CSIRT/IX/2026</code><br>
-                                Diberikan oleh Dansatlak Penangkalan Siber Pussiberad (Kartika CSIRT) atas kerja sama koordinasi temuan kerentanan serta bertindak secara etis dengan melaporkannya.
-                            </p>
-                            <a href="assets/img/cert_pussiber_tni_ad.png" target="_blank" class="btn btn-sm btn-outline-warning">
-                                <i class="bi bi-zoom-in me-1"></i> Buka Piagam Apresiasi
+                            <a href="assets/img/cert_satsiber_tni.png" target="_blank" class="btn btn-sm btn-outline-warning w-100">
+                                <i class="bi bi-zoom-in me-1"></i> Buka Piagam Mabes TNI
                             </a>
                         </article>
                     </div>
-                    
-                    <div class="col-12 col-md-6">
-                        <article class="custom-card card-cyan p-4 h-100">
-                            <div class="d-flex align-items-center justify-content-between mb-3">
-                                <span class="badge bg-info text-dark fw-bold"><i class="bi bi-building-check me-1"></i> PEMERINTAH PROVINSI</span>
-                                <small class="text-cyan font-mono">20 Agustus 2026</small>
+
+                    <!-- 2. PUSSIBER TNI AD (KARTIKA CSIRT) - KATEGORI MILITER -->
+                    <div class="col-12 col-md-6 col-xl-3">
+                        <article class="custom-card card-gold p-4 h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <span class="badge bg-warning text-dark fw-bold"><i class="bi bi-shield-shaded me-1"></i> SIBER MILITER</span>
+                                    <small class="text-warning font-mono">03 Sep 2026</small>
+                                </div>
+                                <h4 class="text-white h5 mb-2">PUSSIBER TNI AD</h4>
+                                <p class="text-muted small mb-3">
+                                    <strong>Nomor:</strong> <code>SERT/36/PUSSIBERAD/IX/2026</code><br>
+                                    Apresiasi Dansatlak Penangkalan Siber Pussiberad (Kartika CSIRT) atas kerja sama koordinasi temuan kerentanan dan pelaporan etis.
+                                </p>
                             </div>
-                            <h4 class="text-white mb-2">BSSA DISKOMINFOTIK PROVINSI DKI JAKARTA</h4>
-                            <p class="text-muted small mb-3">
-                                <strong>Nomor:</strong> <code>113/BUG/BSSA/VIII/2026</code><br>
-                                Apresiasi resmi dari Badan Siber Sandi dan Aplikasi Provinsi DKI Jakarta atas kepedulian dan kontribusi dalam menemukan serta melaporkan kerentanan pada sistem elektronik pemerintah.
-                            </p>
-                            <a href="assets/img/cert_bssa_dki_jakarta.png" target="_blank" class="btn btn-sm btn-outline-info">
-                                <i class="bi bi-zoom-in me-1"></i> Buka Piagam Apresiasi
+                            <a href="assets/img/cert_pussiber_tni_ad.png" target="_blank" class="btn btn-sm btn-outline-warning w-100">
+                                <i class="bi bi-zoom-in me-1"></i> Buka Piagam TNI AD
+                            </a>
+                        </article>
+                    </div>
+
+                    <!-- 3. JUARA 4 NASIONAL CTF ZERO DAY 2026 - KATEGORI KOMPETISI -->
+                    <div class="col-12 col-md-6 col-xl-3">
+                        <article class="custom-card card-cyan p-4 h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <span class="badge bg-primary text-dark fw-bold"><i class="bi bi-trophy-fill me-1"></i> JUARA 4 NASIONAL</span>
+                                    <small class="text-cyan font-mono">28 Jun 2026</small>
+                                </div>
+                                <h4 class="text-white h5 mb-2">CTF ZERO DAY 2026</h4>
+                                <p class="text-muted small mb-3">
+                                    <strong>Nomor:</strong> <code>ZD-2026-CHAMP-04</code><br>
+                                    Predikat 4th Place Scholar Battle Winner pada kompetisi Capture The Flag (CTF) tingkat nasional yang diselenggarakan DSG & Filkom.
+                                </p>
+                            </div>
+                            <a href="assets/img/cert_zeroday.png" target="_blank" class="btn btn-sm btn-outline-primary w-100">
+                                <i class="bi bi-zoom-in me-1"></i> Buka Piagam Juara CTF
+                            </a>
+                        </article>
+                    </div>
+
+                    <!-- 4. CSIRT BMKG - LEMBAGA PEMERINTAH NON-KEMENTERIAN -->
+                    <div class="col-12 col-md-6 col-xl-3">
+                        <article class="custom-card card-cyan p-4 h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <span class="badge bg-info text-dark fw-bold"><i class="bi bi-building-check me-1"></i> CSIRT BMKG</span>
+                                    <small class="text-cyan font-mono">05 Okt 2026</small>
+                                </div>
+                                <h4 class="text-white h5 mb-2">BADAN METEOROLOGI (BMKG)</h4>
+                                <p class="text-muted small mb-3">
+                                    <strong>Nomor:</strong> <code>146/KI.10.05/CSIRT/BMKG</code><br>
+                                    Sertifikat apresiasi resmi penemuan & pelaporan kerentanan etis bertanda tangan elektronik BSrE Badan Siber dan Sandi Negara (BSSN).
+                                </p>
+                            </div>
+                            <a href="assets/img/cert_bmkg.png" target="_blank" class="btn btn-sm btn-outline-info w-100">
+                                <i class="bi bi-zoom-in me-1"></i> Buka Piagam BMKG
                             </a>
                         </article>
                     </div>
@@ -425,13 +471,27 @@ $data_featured = $stmt_featured->fetchAll();
                                 <?php 
                                 $no = 1;
                                 foreach ($data_prestasi as $pres): 
+                                    $is_mil = !empty($pres['is_militer']);
+                                    $is_ctf = strpos($pres['judul_prestasi'], 'Juara 4') !== false;
+                                    $row_class = '';
+                                    if ($is_mil) {
+                                        $row_class = 'table-warning bg-opacity-25';
+                                    } elseif ($is_ctf) {
+                                        $row_class = 'table-primary bg-opacity-25';
+                                    }
                                 ?>
-                                <tr>
+                                <tr class="<?= $row_class ?>">
                                     <td class="fw-bold"><?= sprintf("%02d", $no++) ?></td>
                                     <td><?= htmlspecialchars($pres['tanggal'], ENT_QUOTES, 'UTF-8') ?></td>
                                     <td>
                                         <strong class="text-white"><?= htmlspecialchars($pres['judul_prestasi'], ENT_QUOTES, 'UTF-8') ?></strong><br>
-                                        <small class="text-cyan"><i class="bi bi-award me-1"></i> <?= htmlspecialchars($pres['kategori'], ENT_QUOTES, 'UTF-8') ?></small>
+                                        <?php if ($is_mil): ?>
+                                            <small class="text-warning"><i class="bi bi-shield-fill-check me-1"></i> <strong>Siber Militer & Pertahanan Nasional</strong></small>
+                                        <?php elseif ($is_ctf): ?>
+                                            <small class="text-cyan"><i class="bi bi-trophy-fill me-1"></i> <strong>Juara 4 Nasional Scholar Battle Winner</strong></small>
+                                        <?php else: ?>
+                                            <small class="text-cyan"><i class="bi bi-award me-1"></i> <?= htmlspecialchars($pres['kategori'], ENT_QUOTES, 'UTF-8') ?></small>
+                                        <?php endif; ?>
                                     </td>
                                     <td><?= htmlspecialchars($pres['penyelenggara'], ENT_QUOTES, 'UTF-8') ?></td>
                                     <td><code><?= htmlspecialchars($pres['no_registrasi'], ENT_QUOTES, 'UTF-8') ?></code></td>
