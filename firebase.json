@@ -1,0 +1,15 @@
+{
+  "hosting": {
+    "site": "jawsyanbreachlog",
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "*.sql",
+      "*.php"
+    ],
+    "cleanUrls": true,
+    "trailingSlash": false
+  }
+}

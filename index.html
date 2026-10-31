@@ -912,13 +912,16 @@
                                 Silakan tinggalkan pesan melalui formulir responsif berbasis Bootstrap 5 di bawah ini:
                             </p>
                             
-                            <form action="#" method="POST" class="needs-validation">
+                            <!-- Alert Notifikasi Realtime Cloud Database -->
+                            <div id="contactAlertContainer"></div>
+
+                            <form id="contactForm" class="needs-validation" novalidate>
                                 <div class="row g-3">
                                     
                                     <!-- Input Nama -->
                                     <div class="col-12 col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="contactNama" placeholder="Nama Lengkap" required>
+                                            <input type="text" class="form-control" id="contactNama" name="nama" placeholder="Nama Lengkap" required>
                                             <label for="contactNama">Nama Lengkap *</label>
                                         </div>
                                     </div>
@@ -926,7 +929,7 @@
                                     <!-- Input Email -->
                                     <div class="col-12 col-md-6">
                                         <div class="form-floating">
-                                            <input type="email" class="form-control" id="contactEmail" placeholder="nama@email.com" required>
+                                            <input type="email" class="form-control" id="contactEmail" name="email" placeholder="nama@email.com" required>
                                             <label for="contactEmail">Alamat Email *</label>
                                         </div>
                                     </div>
@@ -934,7 +937,7 @@
                                     <!-- Input Subjek -->
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="contactSubject" placeholder="Subjek Pesan" required>
+                                            <input type="text" class="form-control" id="contactSubject" name="subjek" placeholder="Subjek Pesan" required>
                                             <label for="contactSubject">Subjek / Topik Diskusi *</label>
                                         </div>
                                     </div>
@@ -942,7 +945,7 @@
                                     <!-- Textarea Pesan -->
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <textarea class="form-control" placeholder="Pesan Anda" id="contactMessage" style="height: 130px;" required></textarea>
+                                            <textarea class="form-control" placeholder="Pesan Anda" id="contactMessage" name="pesan" style="height: 130px;" required></textarea>
                                             <label for="contactMessage">Isi Pesan atau Agenda Kolaborasi *</label>
                                         </div>
                                     </div>
@@ -950,7 +953,7 @@
                                     <!-- Checkbox Etis -->
                                     <div class="col-12">
                                         <div class="form-check small text-muted">
-                                            <input class="form-check-input" type="checkbox" id="checkEtika" required>
+                                            <input class="form-check-input" type="checkbox" id="checkEtika" required checked>
                                             <label class="form-check-label" for="checkEtika">
                                                 Saya menyetujui pengiriman pesan ini untuk koordinasi yang etis dan bermanfaat.
                                             </label>
@@ -959,7 +962,7 @@
                                     
                                     <!-- Submit & Reset Buttons -->
                                     <div class="col-12 d-flex gap-2 btn-group-responsive">
-                                        <button type="submit" class="btn btn-primary px-4 py-2 flex-grow-1">
+                                        <button type="submit" id="btnSubmitPesan" class="btn btn-primary px-4 py-2 flex-grow-1">
                                             <i class="bi bi-send-fill me-1"></i> Kirim Pesan Sekarang
                                         </button>
                                         <button type="reset" class="btn btn-outline-secondary px-3 py-2">
@@ -1007,5 +1010,102 @@
     <!-- Bootstrap 5.3.3 Bundle with Popper JS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
+    <!-- Firebase App & Firestore SDK (v10 Compat CDN) -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+
+    <script>
+        // Konfigurasi Firebase NoSQL Database (Cloud Firestore)
+        const firebaseConfig = {
+            projectId: "pneumadina-611a2",
+            appId: "1:183010284675:web:323c5fa96344e5d0f2b7b6",
+            storageBucket: "pneumadina-611a2.firebasestorage.app",
+            apiKey: "AIzaSyAGRJ-hjIgAFj-kWmCJUg8QkNUPpwhPePg",
+            authDomain: "pneumadina-611a2.firebaseapp.com",
+            messagingSenderId: "183010284675",
+            measurementId: "G-WM4FXZ7872"
+        };
+
+        // Inisialisasi Firebase App & Firestore
+        if (!firebase.apps.length) {
+            firebase.initializeApp(firebaseConfig);
+        }
+        const db = firebase.firestore();
+
+        // Penanganan Formulir Kontak Realtime Tanpa Reload (Mencegah HTTP 405 Not Allowed di GitHub Pages & Firebase Hosting)
+        const contactForm = document.getElementById('contactForm');
+        const alertContainer = document.getElementById('contactAlertContainer');
+        const submitBtn = document.getElementById('btnSubmitPesan');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault(); // Menghentikan HTTP POST mentah yang memicu 405 Not Allowed pada server statis
+                
+                if (!this.checkValidity()) {
+                    e.stopPropagation();
+                    this.classList.add('was-validated');
+                    return;
+                }
+
+                const nama = document.getElementById('contactNama').value.trim();
+                const email = document.getElementById('contactEmail').value.trim();
+                const subjek = document.getElementById('contactSubject').value.trim();
+                const pesan = document.getElementById('contactMessage').value.trim();
+
+                const originalBtnHtml = submitBtn.innerHTML;
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Menyimpan ke Cloud Firestore...';
+
+                try {
+                    // Simpan data pesan ke koleksi NoSQL 'tbl_pesan' di Firebase Firestore
+                    await db.collection('tbl_pesan').add({
+                        nama: nama,
+                        email: email,
+                        subjek: subjek,
+                        pesan: pesan,
+                        platform: 'Web Client (Firebase / GitHub Pages)',
+                        hostname: window.location.hostname || 'localhost',
+                        tgl_kirim: firebase.firestore.FieldValue.serverTimestamp()
+                    });
+
+                    // Tampilkan notifikasi sukses interaktif Bootstrap 5
+                    alertContainer.innerHTML = `
+                        <div class="alert alert-success alert-dismissible fade show border-0 shadow-sm mb-4" role="alert" style="background-color: rgba(25, 135, 84, 0.2); border-left: 4px solid #198754 !important;">
+                            <div class="d-flex align-items-center gap-2">
+                                <i class="bi bi-check-circle-fill fs-5 text-success"></i>
+                                <div>
+                                    <strong class="text-white">Pesan Berhasil Terkirim!</strong>
+                                    <p class="mb-0 text-white-50 small">Pesan Anda telah tersimpan secara real-time di Database Cloud Firestore (NoSQL). Terima kasih atas inisialisasi komunikasinya!</p>
+                                </div>
+                            </div>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    `;
+
+                    contactForm.reset();
+                    contactForm.classList.remove('was-validated');
+                    alertContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+                } catch (error) {
+                    console.error("Firebase Firestore Error:", error);
+                    alertContainer.innerHTML = `
+                        <div class="alert alert-danger alert-dismissible fade show border-0 shadow-sm mb-4" role="alert" style="background-color: rgba(220, 53, 69, 0.2); border-left: 4px solid #dc3545 !important;">
+                            <div class="d-flex align-items-center gap-2">
+                                <i class="bi bi-exclamation-triangle-fill fs-5 text-danger"></i>
+                                <div>
+                                    <strong class="text-white">Gagal Mengirim Pesan!</strong>
+                                    <p class="mb-0 text-white-50 small">Terjadi kendala koneksi ke database cloud: ${error.message || 'Error koneksi'}. Silakan coba lagi atau gunakan saluran kontak WhatsApp/Email.</p>
+                                </div>
+                            </div>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    `;
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnHtml;
+                }
+            });
+        }
+    </script>
 </body>
 </html>
