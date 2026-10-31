@@ -6,7 +6,7 @@
 > **Program Studi:** S1 Teknik Informatika (Fakultas Ilmu Rekayasa)  
 > **Perguruan Tinggi:** Universitas Paramadina  
 > **Repositori GitHub:** [https://github.com/j12k14a/portfolio-jawsyan-htmlcss](https://github.com/j12k14a/portfolio-jawsyan-htmlcss)  
-> **Live Demo Web (Firebase Hosting):** [https://jawsyanbreachlog-3c8b3.web.app](https://jawsyanbreachlog-3c8b3.web.app)  
+> **Live Demo Web (Firebase Hosting):** [https://jawsyan-breachlog.web.app](https://jawsyan-breachlog.web.app)  
 > **Live Demo Web (GitHub Pages):** [https://j12k14a.github.io/portfolio-jawsyan-htmlcss/](https://j12k14a.github.io/portfolio-jawsyan-htmlcss/)  
 > **Live Demo Web (Local XAMPP):** `http://localhost/portfolio-jawsyan/index.php`  
 > **Database:** `db_portofolio` (MySQL / MariaDB via PDO) & Firebase Cloud Firestore (Project: `jawsyanbreachlog`)
