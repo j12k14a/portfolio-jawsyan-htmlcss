@@ -1,6 +1,5 @@
 {
   "hosting": {
-    "site": "jawsyanbreachlog",
     "public": ".",
     "ignore": [
       "firebase.json",
